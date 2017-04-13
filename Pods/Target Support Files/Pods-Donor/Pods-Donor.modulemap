@@ -1,0 +1,6 @@
+framework module Pods_Donor {
+  umbrella header "Pods-Donor-umbrella.h"
+
+  export *
+  module * { export * }
+}

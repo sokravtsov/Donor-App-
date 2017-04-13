@@ -33,6 +33,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.066666666669999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="upL-UO-vM5" kind="presentation" id="Ha9-xc-YBL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.65147569444444442" blue="0.60074869791666663" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,4 +92,7 @@
             <point key="canvasLocation" x="1930" y="188"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ha9-xc-YBL"/>
+    </inferredMetricsTieBreakers>
 </document>
