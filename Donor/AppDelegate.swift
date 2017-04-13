@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
         application.registerForRemoteNotifications()
         
-        
         NotificationCenter
             .default
             .addObserver(self, selector: #selector(tokenRefreshNotificaiton),
@@ -65,6 +64,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(userInfo)
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+    
+        print("Message ID: \(userInfo["gcm.message_id"]!)")
+        
+        print(userInfo)
+    }
+
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Failed to register:", error)

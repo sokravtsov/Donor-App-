@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fyn-Qg-aws">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Rf-1N-fGg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="1198" y="188"/>
         </scene>
-        <!--View Controller-->
+        <!--Pick Blood Group View Controller-->
         <scene sceneID="gXf-vo-8nG">
             <objects>
-                <viewController id="3Rf-1N-fGg" sceneMemberID="viewController">
+                <viewController id="3Rf-1N-fGg" customClass="PickBloodGroupViewController" customModule="Donor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ipr-8C-4xP"/>
                         <viewControllerLayoutGuide type="bottom" id="odo-0e-aJ6"/>
@@ -84,15 +84,52 @@
                     <view key="view" contentMode="scaleToFill" id="xyg-ux-kT3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0q-Mj-HxQ">
+                                <rect key="frame" x="27.5" y="226" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3Rf-1N-fGg" id="KcO-6C-oWd"/>
+                                    <outlet property="delegate" destination="3Rf-1N-fGg" id="p5D-J8-MTz"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4B-Je-Vqn">
+                                <rect key="frame" x="16" y="154" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78L-SJ-YyF">
+                                <rect key="frame" x="322" y="28" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="upL-UO-vM5" kind="presentation" id="qd2-NJ-NZ4"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="78L-SJ-YyF" firstAttribute="top" secondItem="ipr-8C-4xP" secondAttribute="bottom" constant="8" id="NVY-Pf-19t"/>
+                            <constraint firstItem="k4B-Je-Vqn" firstAttribute="leading" secondItem="xyg-ux-kT3" secondAttribute="leadingMargin" id="VBn-Lv-Pzu"/>
+                            <constraint firstItem="V0q-Mj-HxQ" firstAttribute="centerY" secondItem="xyg-ux-kT3" secondAttribute="centerY" id="Zy6-gS-utc"/>
+                            <constraint firstItem="k4B-Je-Vqn" firstAttribute="trailing" secondItem="xyg-ux-kT3" secondAttribute="trailingMargin" id="anH-xk-KkA"/>
+                            <constraint firstItem="k4B-Je-Vqn" firstAttribute="top" secondItem="ipr-8C-4xP" secondAttribute="bottom" constant="134" id="bXq-rp-7lM"/>
+                            <constraint firstItem="78L-SJ-YyF" firstAttribute="trailing" secondItem="xyg-ux-kT3" secondAttribute="trailingMargin" id="oJk-7c-ahy"/>
+                            <constraint firstItem="V0q-Mj-HxQ" firstAttribute="centerX" secondItem="xyg-ux-kT3" secondAttribute="centerX" id="pUK-lx-nkZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pickerView" destination="V0q-Mj-HxQ" id="4j6-Tg-BB0"/>
+                        <outlet property="titleLabel" destination="k4B-Je-Vqn" id="iLu-VZ-hrD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DwR-2e-6Wt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1930" y="188"/>
+            <point key="canvasLocation" x="751" y="-569"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ha9-xc-YBL"/>
+        <segue reference="qd2-NJ-NZ4"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,6 +17,9 @@
 		82A006B81E9ED90400C35B1D /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A006B71E9ED90400C35B1D /* EventViewController.swift */; };
 		82A006BA1EA01B2800C35B1D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A006B91EA01B2800C35B1D /* Constants.swift */; };
 		82A006BC1EA01E0200C35B1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82A006BB1EA01E0200C35B1D /* GoogleService-Info.plist */; };
+		82A006BF1EA02B6600C35B1D /* PickBloodGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A006BE1EA02B6600C35B1D /* PickBloodGroupViewController.swift */; };
+		82A006C61EA02EB900C35B1D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A006C51EA02EB900C35B1D /* Profile.swift */; };
+		82A006C81EA0302100C35B1D /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A006C71EA0302100C35B1D /* GCDBlackBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		82A006B91EA01B2800C35B1D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		82A006BB1EA01E0200C35B1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		82A006BD1EA020E600C35B1D /* Donor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Donor.entitlements; sourceTree = "<group>"; };
+		82A006BE1EA02B6600C35B1D /* PickBloodGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickBloodGroupViewController.swift; sourceTree = "<group>"; };
+		82A006C51EA02EB900C35B1D /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		82A006C71EA0302100C35B1D /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		DC72BD702B33698BDC395806 /* Pods-Donor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Donor/Pods-Donor.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,19 +85,54 @@
 		82A006A01E9ECBD200C35B1D /* Donor */ = {
 			isa = PBXGroup;
 			children = (
-				82A006BD1EA020E600C35B1D /* Donor.entitlements */,
+				82A006C01EA02E0900C35B1D /* Model */,
+				82A006C31EA02E6100C35B1D /* View */,
+				82A006C21EA02E3A00C35B1D /* Controller */,
+				82A006C41EA02E7200C35B1D /* Supporting Files */,
+				82A006B91EA01B2800C35B1D /* Constants.swift */,
 				82A006A11E9ECBD200C35B1D /* AppDelegate.swift */,
+				82A006C71EA0302100C35B1D /* GCDBlackBox.swift */,
+			);
+			path = Donor;
+			sourceTree = "<group>";
+		};
+		82A006C01EA02E0900C35B1D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82A006C51EA02EB900C35B1D /* Profile.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		82A006C21EA02E3A00C35B1D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				82A006B31E9ECC9E00C35B1D /* LoginViewController.swift */,
 				82A006B51E9ED16F00C35B1D /* MapViewController.swift */,
 				82A006B71E9ED90400C35B1D /* EventViewController.swift */,
+				82A006BE1EA02B6600C35B1D /* PickBloodGroupViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		82A006C31EA02E6100C35B1D /* View */ = {
+			isa = PBXGroup;
+			children = (
 				82A006A51E9ECBD200C35B1D /* Main.storyboard */,
-				82A006A81E9ECBD200C35B1D /* Assets.xcassets */,
 				82A006AA1E9ECBD200C35B1D /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		82A006C41EA02E7200C35B1D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				82A006BD1EA020E600C35B1D /* Donor.entitlements */,
+				82A006A81E9ECBD200C35B1D /* Assets.xcassets */,
 				82A006BB1EA01E0200C35B1D /* GoogleService-Info.plist */,
 				82A006AD1E9ECBD200C35B1D /* Info.plist */,
-				82A006B91EA01B2800C35B1D /* Constants.swift */,
 			);
-			path = Donor;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		9A62F9314CC28FBFFA152D46 /* Frameworks */ = {
@@ -235,8 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A006C81EA0302100C35B1D /* GCDBlackBox.swift in Sources */,
 				82A006BA1EA01B2800C35B1D /* Constants.swift in Sources */,
 				82A006B41E9ECC9E00C35B1D /* LoginViewController.swift in Sources */,
+				82A006BF1EA02B6600C35B1D /* PickBloodGroupViewController.swift in Sources */,
+				82A006C61EA02EB900C35B1D /* Profile.swift in Sources */,
 				82A006B81E9ED90400C35B1D /* EventViewController.swift in Sources */,
 				82A006B61E9ED16F00C35B1D /* MapViewController.swift in Sources */,
 				82A006A21E9ECBD200C35B1D /* AppDelegate.swift in Sources */,
