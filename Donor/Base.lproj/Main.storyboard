@@ -31,14 +31,14 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6a-yq-rQu">
                                 <rect key="frame" x="16" y="356" width="343" height="30"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.066666666669999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="upL-UO-vM5" kind="presentation" id="Ha9-xc-YBL"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.65147569444444442" blue="0.60074869791666663" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.65098039215686276" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ir6-TT-8Nz" firstAttribute="leading" secondItem="vXt-fM-0Ez" secondAttribute="leadingMargin" id="Ez2-kr-SFz"/>
                             <constraint firstItem="ir6-TT-8Nz" firstAttribute="centerY" secondItem="vXt-fM-0Ez" secondAttribute="centerY" id="NNQ-V1-qLk"/>
@@ -87,6 +87,7 @@
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0q-Mj-HxQ">
                                 <rect key="frame" x="27.5" y="226" width="320" height="216"/>
+                                <color key="backgroundColor" red="1" green="0.65098039215686276" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="3Rf-1N-fGg" id="KcO-6C-oWd"/>
                                     <outlet property="delegate" destination="3Rf-1N-fGg" id="p5D-J8-MTz"/>
@@ -101,14 +102,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78L-SJ-YyF">
                                 <rect key="frame" x="322" y="28" width="37" height="30"/>
                                 <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="upL-UO-vM5" kind="presentation" id="qd2-NJ-NZ4"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.65098039215686276" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="78L-SJ-YyF" firstAttribute="top" secondItem="ipr-8C-4xP" secondAttribute="bottom" constant="8" id="NVY-Pf-19t"/>
                             <constraint firstItem="k4B-Je-Vqn" firstAttribute="leading" secondItem="xyg-ux-kT3" secondAttribute="leadingMargin" id="VBn-Lv-Pzu"/>
@@ -130,6 +131,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qd2-NJ-NZ4"/>
+        <segue reference="tzm-Nd-Qya"/>
     </inferredMetricsTieBreakers>
 </document>

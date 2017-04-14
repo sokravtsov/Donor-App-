@@ -18,7 +18,7 @@ final class Profile {
     
     var groupOfBlood: String? = nil
     
-
+    
     
 }
 ///Variable for singleton

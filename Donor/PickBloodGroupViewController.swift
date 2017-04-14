@@ -18,14 +18,35 @@ class PickBloodGroupViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     // MARK: - Variables
     
-    let bloodGroups = ["A(II)Rh+", "A(II)Rh-", "B(III)Rh+", "B(III)Rh-", "AB(IV)Rh+", "AB(IV)Rh-", "O(I)Rh+", "O(I)Rh-"]
+    let bloodGroups = [
+        GroupOfBlood.secondPlus,
+        GroupOfBlood.secondMinus,
+        GroupOfBlood.thirdPlus,
+        GroupOfBlood.thirdMinus,
+        GroupOfBlood.fourthPlus,
+        GroupOfBlood.fourthMinus,
+        GroupOfBlood.firstPlus,
+        GroupOfBlood.firstMinus]
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.titleLabel.text = Constants.groupOfBlood
+        
+        // Download saved group of blood from UserDefaults and select at this row
+        guard let groupOfBlood = bloodGroups.index(of: UserDefaults.standard.value(forKey: UserDefaultsKey.groupOfBlood) as! String) else {
+            print (ErrorIs.groupOfBloodNil)
+            return
+        }
+        pickerView.selectRow(groupOfBlood, inComponent: 0, animated: false)
     }
 }
+
+// MARK: - Extensions
+
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 
 extension PickBloodGroupViewController {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -41,7 +62,7 @@ extension PickBloodGroupViewController {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        titleLabel.text = bloodGroups[row]
         Profile.sharedProfile.name = bloodGroups[row]
+        UserDefaults.standard.set(bloodGroups[row], forKey: UserDefaultsKey.groupOfBlood)
     }
 }

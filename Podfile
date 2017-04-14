@@ -6,4 +6,5 @@ target 'Donor' do
   pod 'IQKeyboardManagerSwift', '4.0.9'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'Firebase/Auth'
 end
