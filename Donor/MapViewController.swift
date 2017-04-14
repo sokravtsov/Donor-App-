@@ -11,18 +11,26 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var mapView: GMSMapView!
+    
+    @IBOutlet weak var settingsButton: UIButton!
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView.camera = camera
         mapView.isMyLocationEnabled = true
-        view = mapView
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+        
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func buttonDidTouch(_ sender: UIButton) {
+        self.performSegue(withIdentifier: Segue.toPickerVC, sender: self)
     }
 }

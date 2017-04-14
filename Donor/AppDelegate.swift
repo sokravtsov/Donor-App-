@@ -12,6 +12,7 @@ import IQKeyboardManagerSwift
 import Firebase
 import FirebaseMessaging
 import UserNotifications
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,9 +38,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.applicationIconBadgeNumber = 0
 
-        return true
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let sourceApplication: String? = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
+        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: sourceApplication, annotation: nil)
+    }
+
     func tokenRefreshNotificaiton(notification: NSNotification) {
         let refreshedToken = FIRInstanceID.instanceID().token()
         print("InstanceID token: \(String(describing: refreshedToken))")

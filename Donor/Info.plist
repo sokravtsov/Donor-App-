@@ -5,7 +5,7 @@
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>gdgdsfgdfgdfg</string>
+	<string>Your location information will be used to show you the nearest Markers</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -24,8 +24,10 @@
 	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>googlechromes</string>
-		<string>comgooglemaps</string>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -47,5 +49,18 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb268255790252971</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>268255790252971</string>
+	<key>FacebookDisplayName</key>
+	<string>Donor</string>
 </dict>
 </plist>

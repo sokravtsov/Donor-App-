@@ -9,7 +9,7 @@
 import UIKit
 
 class PickBloodGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    
     // MARK: - Outlets
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -18,15 +18,14 @@ class PickBloodGroupViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     // MARK: - Variables
     
-    let bloodGroups = [
-        GroupOfBlood.secondPlus,
-        GroupOfBlood.secondMinus,
-        GroupOfBlood.thirdPlus,
-        GroupOfBlood.thirdMinus,
-        GroupOfBlood.fourthPlus,
-        GroupOfBlood.fourthMinus,
-        GroupOfBlood.firstPlus,
-        GroupOfBlood.firstMinus]
+    let bloodGroups = [GroupOfBlood.secondPlus,
+                       GroupOfBlood.secondMinus,
+                       GroupOfBlood.thirdPlus,
+                       GroupOfBlood.thirdMinus,
+                       GroupOfBlood.fourthPlus,
+                       GroupOfBlood.fourthMinus,
+                       GroupOfBlood.firstPlus,
+                       GroupOfBlood.firstMinus]
     
     // MARK: - Life Cycle
     
@@ -35,12 +34,17 @@ class PickBloodGroupViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         self.titleLabel.text = Constants.groupOfBlood
         
+        guard let groupOfBlood = UserDefaults.standard.value(forKey: UserDefaultsKey.groupOfBlood) else { return }
         // Download saved group of blood from UserDefaults and select at this row
-        guard let groupOfBlood = bloodGroups.index(of: UserDefaults.standard.value(forKey: UserDefaultsKey.groupOfBlood) as! String) else {
+        if let groupOfBlood = bloodGroups.index(of: groupOfBlood as! String) {
+            pickerView.selectRow(groupOfBlood, inComponent: 0, animated: false)
+        } else {
             print (ErrorIs.groupOfBloodNil)
-            return
         }
-        pickerView.selectRow(groupOfBlood, inComponent: 0, animated: false)
+    }
+    
+    @IBAction func doneButtonDidTouch(_ sender: UIButton) {
+        self.performSegue(withIdentifier: Segue.openMap, sender: self)
     }
 }
 
@@ -61,7 +65,19 @@ extension PickBloodGroupViewController {
         return bloodGroups[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = bloodGroups[row]
+        
+        var color: UIColor!
+
+        color = pickerView.selectedRow(inComponent: component) == row ? .red : .white
+        
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName: color])
+        return myTitle
+    }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickerView.reloadAllComponents()
         Profile.sharedProfile.name = bloodGroups[row]
         UserDefaults.standard.set(bloodGroups[row], forKey: UserDefaultsKey.groupOfBlood)
     }

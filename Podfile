@@ -7,4 +7,5 @@ target 'Donor' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'Firebase/Auth'
+  pod 'FBSDKLoginKit'
 end

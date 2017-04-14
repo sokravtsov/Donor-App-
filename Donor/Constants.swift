@@ -12,6 +12,15 @@ enum GoogleMaps {
 
 enum Constants {
     static let groupOfBlood = "Check your Group of Blood"
+    static let save = "Save"
+    static let registration = "Registration"
+    static let cancel = "Cancel"
+    static let enterEmailAgain = "Try enter another email"
+}
+
+enum Placeholder {
+    static let email = "Enter your email"
+    static let password = "Enter your password"
 }
 
 enum UserDefaultsKey {
@@ -20,6 +29,7 @@ enum UserDefaultsKey {
 
 enum ErrorIs {
     static let groupOfBloodNil = "Group of blood is nil"
+    static let notValidEmail = "Not valid email"
 }
 
 enum GroupOfBlood {
@@ -31,5 +41,16 @@ enum GroupOfBlood {
     static let fourthMinus = "AB(IV)Rh-"
     static let firstPlus = "O(I)Rh+"
     static let firstMinus = "O(I)Rh-"
+}
+
+enum Segue {
+    static let openMap = "openMap"
+    static let toPickerGroupOfBlood = "toPickerGroupOfBlood"
+    static let fromLoginToMap = "fromLoginToMap"
+    static let toPickerVC = "toPickerVC"
+}
+
+enum Radius {
+    static let corner = 5
 }
 
