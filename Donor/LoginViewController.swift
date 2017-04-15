@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FBSDKLoginKit
+import PermissionScope
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
@@ -24,9 +25,27 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var sigUpButton: UIButton!
     
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
+    
+    // MARK: - Variables
+    
+    let pscope = PermissionScope()
+
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set up permissions
+        pscope.addPermission(NotificationsPermission(notificationCategories: nil),
+                             message: "We use this to send you\r\nspam and love notes")
+        pscope.addPermission(LocationWhileInUsePermission(),
+                             message: "We use this to track\r\nwhere you live")
+        
+        // Show dialog with callbacks
+        pscope.show({ finished, results in
+            print("got results \(results)")
+        }, cancelled: { (results) -> Void in
+            print("thing was cancelled")
+        })
         
         facebookLoginButton.delegate = self
         

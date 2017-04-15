@@ -8,4 +8,5 @@ target 'Donor' do
   pod 'Firebase/Messaging'
   pod 'Firebase/Auth'
   pod 'FBSDKLoginKit'
+  pod 'PermissionScope'
 end
