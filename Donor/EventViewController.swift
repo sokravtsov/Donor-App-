@@ -31,14 +31,14 @@ class EventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     // MARK: - Variables 
     
     /// Default II+ blood group
-    var bloodGroup = GroupOfBlood.secondPlus
+    var bloodGroup: String?
     
     /// Variable for saving expired date
-    var expiredDate = ""
+    var expiredDate: String?
     
-    var latitude = ""
+    var latitude: String?
     
-    var longitude = ""
+    var longitude: String?
     
     /// Array with blood groups
     let bloodGroups = [GroupOfBlood.secondPlus,
@@ -63,13 +63,18 @@ class EventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     @IBAction func doneButtonDidTouch(_ sender: UIButton) {
-        DataLoader.sharedInstance.sendEventToFirebase(latitude: latitude,
-                                                      longitude: longitude,
-                                                      bloodGroup: bloodGroup,
-                                                      date: expiredDate,
+        guard let unwrapLat = latitude, let unwrapLon = longitude, let unwrapDate = expiredDate, let unwrapGroup =  bloodGroup else {
+            showAlert(title: "Error 😓", message: "You should choose blood group and expired date")
+            return
+        }
+        
+        DataLoader.sharedInstance.sendEventToFirebase(latitude: unwrapLat,
+                                                      longitude: unwrapLon,
+                                                      bloodGroup: unwrapGroup,
+                                                      date: unwrapDate,
                                                       description: textView.text)
         print("Event sended to Firebase")
-        showAlertAndDismiss(title: "Event completed", message: "Every donor with \(bloodGroup) will see this event")
+        showAlertAndDismiss(title: "Event created 🙏🏽", message: "Every donor with \(unwrapGroup) blood will see this event")
     }
 }
 
@@ -90,7 +95,7 @@ extension EventViewController {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         bloodGroup = bloodGroups[row] as String
-        print(bloodGroup)
+        print(bloodGroup!)
     }
 }
 
@@ -108,6 +113,6 @@ extension EventViewController {
         dateFormatter.timeStyle = DateFormatter.Style.none
         expiredDate = dateFormatter.string(from: sender.date)
         // FIXME: - Delete print
-        print(expiredDate)
+        print(expiredDate!)
     }
 }

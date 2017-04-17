@@ -48,6 +48,7 @@ enum Segue {
     static let toPickerGroupOfBlood = "toPickerGroupOfBlood"
     static let fromLoginToMap = "fromLoginToMap"
     static let toPickerVC = "toPickerVC"
+    static let createEvent = "createEvent"
 }
 
 enum Radius {

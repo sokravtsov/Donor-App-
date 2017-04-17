@@ -22,9 +22,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     let locationManager = CLLocationManager()
     
-    var latitude = ""
+    var latitude: String?
     
-    var longitude = ""
+    var longitude: String?
     
     var eventViewController: EventViewController!
     
@@ -65,27 +65,21 @@ extension MapViewController {
 // MARK: - didLongPressAt coordinate
 extension MapViewController {
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
-//        let marker = GMSMarker()
-//        marker.position = coordinate
-//        marker.title = "Hello World"
-//        marker.snippet = "hahaha"
-//        marker.appearAnimation = .pop
-//        marker.map = mapView
-        
-        // TODO: - add coordinate to EventVC
         latitude = coordinate.latitude.description
         longitude = coordinate.longitude.description
-        self.performSegue(withIdentifier: "createEvent", sender: self)
+        self.performSegue(withIdentifier: Segue.createEvent, sender: self)
     }
 }
 
 extension MapViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "createEvent" {
+        if segue.identifier == Segue.createEvent {
             let vc = segue.destination as! EventViewController
             self.eventViewController = vc
-            vc.latitude = latitude
-            vc.longitude = longitude
+            guard let unwrapLat = latitude else {return}
+            guard let unwrapLon = longitude else {return}
+            vc.latitude = unwrapLat
+            vc.longitude = unwrapLon
         }
     }
 }
