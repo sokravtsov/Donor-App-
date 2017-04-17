@@ -91,6 +91,40 @@
             </objects>
             <point key="canvasLocation" x="400.80000000000001" y="-572.56371814092961"/>
         </scene>
+        <!--TestVC-->
+        <scene sceneID="2wu-Hi-rxY">
+            <objects>
+                <viewController id="8jQ-EH-On4" customClass="testVC" customModule="Donor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DKW-lb-hWB"/>
+                        <viewControllerLayoutGuide type="bottom" id="IPF-27-JnE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vsk-nw-cgo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2u-jb-wZh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="l4e-XB-C46">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SH7-4p-eUA"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="TxD-J1-Hf7"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H2u-jb-wZh" firstAttribute="leading" secondItem="Vsk-nw-cgo" secondAttribute="leading" id="Nwa-sf-akf"/>
+                            <constraint firstAttribute="trailing" secondItem="H2u-jb-wZh" secondAttribute="trailing" id="cpj-gq-Gi9"/>
+                            <constraint firstItem="H2u-jb-wZh" firstAttribute="top" secondItem="DKW-lb-hWB" secondAttribute="bottom" id="rF3-OJ-Vct"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0j-F6-f2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-196" y="242"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="6ZV-dp-muC">
             <objects>
@@ -129,11 +163,124 @@
                         <outlet property="mapView" destination="46r-zt-i9H" id="aRT-JP-8UK"/>
                         <outlet property="settingsButton" destination="lYG-il-FKU" id="0pI-Kp-liX"/>
                         <segue destination="3Rf-1N-fGg" kind="presentation" identifier="toPickerVC" id="Xio-od-T8V"/>
+                        <segue destination="9iB-Tw-Xbe" kind="presentation" identifier="createEvent" id="oAI-i1-QbM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fu-MH-GGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="793" y="186"/>
+        </scene>
+        <!--Event View Controller-->
+        <scene sceneID="RTo-AY-mdm">
+            <objects>
+                <viewController id="9iB-Tw-Xbe" customClass="EventViewController" customModule="Donor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NUL-SN-y9X"/>
+                        <viewControllerLayoutGuide type="bottom" id="BK5-ZZ-rSl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="51w-ov-IfK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCb-eM-OXF">
+                                <rect key="frame" x="322" y="28" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonDidTouch:" destination="9iB-Tw-Xbe" eventType="touchUpInside" id="13R-Dc-p8I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNY-9C-k7W">
+                                <rect key="frame" x="16" y="28" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonDidTouch:" destination="9iB-Tw-Xbe" eventType="touchUpInside" id="zff-yJ-boC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specify the required blood group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5se-Ht-XM7">
+                                <rect key="frame" x="16" y="66" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQ8-bq-EGa">
+                                <rect key="frame" x="0.0" y="95" width="375" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="1Df-9g-UxZ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="9iB-Tw-Xbe" id="JYs-9a-d2p"/>
+                                    <outlet property="delegate" destination="9iB-Tw-Xbe" id="5i8-Ma-Z95"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description (Optional)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQe-Di-6bP">
+                                <rect key="frame" x="16" y="380" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry date of blood donation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-ax-vEQ">
+                                <rect key="frame" x="16" y="223" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DuZ-l2-agw">
+                                <rect key="frame" x="0.0" y="252" width="375" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="0B6-g4-jF1"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="514125163.76574302">
+                                    <!--2017-04-17 12:32:43 +0000-->
+                                </date>
+                            </datePicker>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="psI-Q5-rXN">
+                                <rect key="frame" x="16" y="409" width="343" height="238"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.94117647059999998" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="psI-Q5-rXN" firstAttribute="top" secondItem="UQe-Di-6bP" secondAttribute="bottom" constant="8" id="0lP-hh-0sv"/>
+                            <constraint firstItem="TCb-eM-OXF" firstAttribute="top" secondItem="NUL-SN-y9X" secondAttribute="bottom" constant="8" id="5r1-XY-Yh2"/>
+                            <constraint firstItem="BK5-ZZ-rSl" firstAttribute="top" secondItem="psI-Q5-rXN" secondAttribute="bottom" constant="20" id="6qs-3B-TnA"/>
+                            <constraint firstItem="5se-Ht-XM7" firstAttribute="trailing" secondItem="51w-ov-IfK" secondAttribute="trailingMargin" id="9J8-27-Aj8"/>
+                            <constraint firstItem="psI-Q5-rXN" firstAttribute="leading" secondItem="51w-ov-IfK" secondAttribute="leadingMargin" id="EBL-VX-cvQ"/>
+                            <constraint firstItem="5se-Ht-XM7" firstAttribute="leading" secondItem="51w-ov-IfK" secondAttribute="leadingMargin" id="GwR-3K-t7p"/>
+                            <constraint firstAttribute="trailing" secondItem="gQ8-bq-EGa" secondAttribute="trailing" id="IOb-oK-2Ph"/>
+                            <constraint firstItem="AFh-ax-vEQ" firstAttribute="top" secondItem="gQ8-bq-EGa" secondAttribute="bottom" constant="8" id="ONK-3c-tDG"/>
+                            <constraint firstItem="UQe-Di-6bP" firstAttribute="top" secondItem="DuZ-l2-agw" secondAttribute="bottom" constant="8" id="ScO-HR-IAu"/>
+                            <constraint firstItem="5se-Ht-XM7" firstAttribute="top" secondItem="zNY-9C-k7W" secondAttribute="bottom" constant="8" id="TMM-kO-Gl4"/>
+                            <constraint firstItem="gQ8-bq-EGa" firstAttribute="leading" secondItem="51w-ov-IfK" secondAttribute="leading" id="TyV-19-2g1"/>
+                            <constraint firstItem="UQe-Di-6bP" firstAttribute="trailing" secondItem="51w-ov-IfK" secondAttribute="trailingMargin" id="X8M-ou-s6A"/>
+                            <constraint firstItem="UQe-Di-6bP" firstAttribute="leading" secondItem="51w-ov-IfK" secondAttribute="leadingMargin" id="YcZ-Dv-XX2"/>
+                            <constraint firstItem="AFh-ax-vEQ" firstAttribute="leading" secondItem="51w-ov-IfK" secondAttribute="leadingMargin" id="bfx-bY-3hh"/>
+                            <constraint firstItem="gQ8-bq-EGa" firstAttribute="top" secondItem="5se-Ht-XM7" secondAttribute="bottom" constant="8" id="clW-cj-fKI"/>
+                            <constraint firstItem="TCb-eM-OXF" firstAttribute="trailing" secondItem="51w-ov-IfK" secondAttribute="trailingMargin" id="g9M-kr-OC5"/>
+                            <constraint firstItem="DuZ-l2-agw" firstAttribute="leading" secondItem="51w-ov-IfK" secondAttribute="leading" id="h7c-b0-0yD"/>
+                            <constraint firstItem="DuZ-l2-agw" firstAttribute="top" secondItem="AFh-ax-vEQ" secondAttribute="bottom" constant="8" id="kSo-hM-iUQ"/>
+                            <constraint firstItem="psI-Q5-rXN" firstAttribute="trailing" secondItem="51w-ov-IfK" secondAttribute="trailingMargin" id="lQV-V0-QxF"/>
+                            <constraint firstItem="AFh-ax-vEQ" firstAttribute="trailing" secondItem="51w-ov-IfK" secondAttribute="trailingMargin" id="oPG-TN-lVv"/>
+                            <constraint firstItem="zNY-9C-k7W" firstAttribute="leading" secondItem="51w-ov-IfK" secondAttribute="leadingMargin" id="r5W-zK-fDJ"/>
+                            <constraint firstItem="zNY-9C-k7W" firstAttribute="top" secondItem="NUL-SN-y9X" secondAttribute="bottom" constant="8" id="wm5-NK-4fr"/>
+                            <constraint firstAttribute="trailing" secondItem="DuZ-l2-agw" secondAttribute="trailing" id="yCf-5q-kAy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="zNY-9C-k7W" id="oAi-GI-kja"/>
+                        <outlet property="chooceBloodLabel" destination="5se-Ht-XM7" id="vOk-yt-XZc"/>
+                        <outlet property="chooceDateLabel" destination="AFh-ax-vEQ" id="ndx-dR-AyA"/>
+                        <outlet property="datePickerView" destination="DuZ-l2-agw" id="rvG-Rv-XYX"/>
+                        <outlet property="descriptionLabel" destination="UQe-Di-6bP" id="pmw-Jg-jjh"/>
+                        <outlet property="doneButton" destination="TCb-eM-OXF" id="ziR-QV-uev"/>
+                        <outlet property="pickerView" destination="gQ8-bq-EGa" id="hZI-6D-tds"/>
+                        <outlet property="textView" destination="psI-Q5-rXN" id="J42-Ra-pXC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6i-Fp-KPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1655" y="186"/>
         </scene>
         <!--Pick Blood Group View Controller-->
         <scene sceneID="gXf-vo-8nG">
@@ -197,7 +344,7 @@
         <image name="Image" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="jGW-fg-2dZ"/>
         <segue reference="CdV-4G-n82"/>
-        <segue reference="Oly-Bb-bQc"/>
     </inferredMetricsTieBreakers>
 </document>

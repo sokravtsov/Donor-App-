@@ -22,20 +22,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     let locationManager = CLLocationManager()
     
+    var latitude = ""
+    
+    var longitude = ""
+    
+    var eventViewController: EventViewController!
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mapView.delegate = self
         locationManager.delegate = self
         
-        CLLocationManager.authorizationStatus() != .authorizedWhenInUse ?
-            locationManager.requestWhenInUseAuthorization() : locationManager.startUpdatingLocation()
-        
+        CLLocationManager.authorizationStatus() != .authorizedWhenInUse ? locationManager.requestWhenInUseAuthorization() : locationManager.startUpdatingLocation()
         
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
-
     }
     
     // MARK: - Actions
@@ -58,12 +62,30 @@ extension MapViewController {
     }
 }
 
+// MARK: - didLongPressAt coordinate
 extension MapViewController {
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
-        let marker = GMSMarker(position: coordinate)
-        marker.title = "Hello World"
-        performUIUpdatesOnMain {
-            marker.map = mapView
+//        let marker = GMSMarker()
+//        marker.position = coordinate
+//        marker.title = "Hello World"
+//        marker.snippet = "hahaha"
+//        marker.appearAnimation = .pop
+//        marker.map = mapView
+        
+        // TODO: - add coordinate to EventVC
+        latitude = coordinate.latitude.description
+        longitude = coordinate.longitude.description
+        self.performSegue(withIdentifier: "createEvent", sender: self)
+    }
+}
+
+extension MapViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createEvent" {
+            let vc = segue.destination as! EventViewController
+            self.eventViewController = vc
+            vc.latitude = latitude
+            vc.longitude = longitude
         }
     }
 }

@@ -7,6 +7,8 @@ target 'Donor' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   pod 'FBSDKLoginKit'
   pod 'PermissionScope'
+  pod 'Eureka'
 end

@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - Eureka (2.0.1)
   - FBSDKCoreKit (4.21.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.21.0):
@@ -15,6 +16,9 @@ PODS:
   - Firebase/Core (3.15.0):
     - FirebaseAnalytics (= 3.7.0)
     - FirebaseCore (= 3.5.2)
+  - Firebase/Database (3.15.0):
+    - Firebase/Core
+    - FirebaseDatabase (= 3.1.2)
   - Firebase/Messaging (3.15.0):
     - Firebase/Core
     - FirebaseMessaging (= 1.2.2)
@@ -28,6 +32,8 @@ PODS:
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (3.5.2):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (3.1.2):
+    - FirebaseAnalytics (~> 3.7)
   - FirebaseInstanceID (1.0.9)
   - FirebaseMessaging (1.2.2):
     - FirebaseAnalytics (~> 3.7)
@@ -59,9 +65,11 @@ PODS:
   - Protobuf (3.2.1)
 
 DEPENDENCIES:
+  - Eureka
   - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Database
   - Firebase/Messaging
   - GoogleMaps
   - GooglePlaces
@@ -70,12 +78,14 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Eureka: ae837bb1dfae0c07bc1bda7aeef87876eeb537c2
   FBSDKCoreKit: 8a372ab194b5c7c26355c1920ef52dbeb44bc222
   FBSDKLoginKit: a1a5f4b4ac445823a020fbeeaf5f03714a67ff9c
   Firebase: 2b1cdfba1cda8589f32904a697cc753322bff9d8
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
   FirebaseCore: a024587e43778508700af8c6b1209f7c4516ba02
+  FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   FirebaseMessaging: df8267f378580a24174ce7861233aa11d5c90109
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
@@ -86,6 +96,6 @@ SPEC CHECKSUMS:
   PermissionScope: a30c16e015779ba27c97c124e7539e27b5829de2
   Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
 
-PODFILE CHECKSUM: 67dfa66f5a9a7e36be6582dcad147b77f67c5312
+PODFILE CHECKSUM: 195e7f54f9815add525b8aa7f5057241468ab84a
 
 COCOAPODS: 1.2.0

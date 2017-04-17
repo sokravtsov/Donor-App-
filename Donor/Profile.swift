@@ -14,11 +14,7 @@ final class Profile {
         return _sharedProfile
     }
     
-    var name: String? = nil
-    
     var groupOfBlood: String? = nil
-    
-    
     
 }
 ///Variable for singleton
