@@ -10,5 +10,4 @@ target 'Donor' do
   pod 'Firebase/Database'
   pod 'FBSDKLoginKit'
   pod 'PermissionScope'
-  pod 'Eureka'
 end

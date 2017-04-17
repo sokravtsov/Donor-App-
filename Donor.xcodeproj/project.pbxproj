@@ -21,7 +21,6 @@
 		82A006C61EA02EB900C35B1D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A006C51EA02EB900C35B1D /* Profile.swift */; };
 		82A006C81EA0302100C35B1D /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A006C71EA0302100C35B1D /* GCDBlackBox.swift */; };
 		82A006CC1EA1345F00C35B1D /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A006CB1EA1345F00C35B1D /* Alerts.swift */; };
-		82B6AACF1EA541F600893174 /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6AACE1EA541F600893174 /* testVC.swift */; };
 		82B6AAD11EA5611400893174 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6AAD01EA5611400893174 /* DataLoader.swift */; };
 		82D51E7C1EA50D740070B10A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D51E7B1EA50D740070B10A /* Event.swift */; };
 /* End PBXBuildFile section */
@@ -46,7 +45,6 @@
 		82A006C71EA0302100C35B1D /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		82A006CB1EA1345F00C35B1D /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		82A006CD1EA1765500C35B1D /* Donor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Donor-Bridging-Header.h"; sourceTree = "<group>"; };
-		82B6AACE1EA541F600893174 /* testVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
 		82B6AAD01EA5611400893174 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		82D51E7B1EA50D740070B10A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DC72BD702B33698BDC395806 /* Pods-Donor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Donor/Pods-Donor.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 				82A006BE1EA02B6600C35B1D /* PickBloodGroupViewController.swift */,
 				82A006B51E9ED16F00C35B1D /* MapViewController.swift */,
 				82A006B71E9ED90400C35B1D /* EventViewController.swift */,
-				82B6AACE1EA541F600893174 /* testVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -302,7 +299,6 @@
 				82A006B81E9ED90400C35B1D /* EventViewController.swift in Sources */,
 				82A006B61E9ED16F00C35B1D /* MapViewController.swift in Sources */,
 				82B6AAD11EA5611400893174 /* DataLoader.swift in Sources */,
-				82B6AACF1EA541F600893174 /* testVC.swift in Sources */,
 				82A006CC1EA1345F00C35B1D /* Alerts.swift in Sources */,
 				82A006A21E9ECBD200C35B1D /* AppDelegate.swift in Sources */,
 			);
