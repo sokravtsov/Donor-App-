@@ -28,11 +28,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     var eventViewController: EventViewController!
     
+//    var events = [Event]()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        DataLoader.shared.getEvents()
         mapView.delegate = self
         locationManager.delegate = self
         

@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Nv-dW-bdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400.80000000000001" y="-572.56371814092961"/>
+            <point key="canvasLocation" x="-591" y="-546"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="6ZV-dp-muC">
@@ -114,9 +114,18 @@
                                     <action selector="buttonDidTouch:" destination="upL-UO-vM5" eventType="touchUpInside" id="w35-M7-glE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWm-k2-nwX">
+                                <rect key="frame" x="342" y="61" width="25" height="25"/>
+                                <state key="normal" image="menu"/>
+                                <connections>
+                                    <segue destination="pbu-OB-E4Q" kind="presentation" id="z4k-Js-Qkh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rWm-k2-nwX" firstAttribute="top" secondItem="lYG-il-FKU" secondAttribute="bottom" constant="8" id="0vg-96-CwV"/>
+                            <constraint firstAttribute="trailing" secondItem="rWm-k2-nwX" secondAttribute="trailing" constant="8" id="1MF-5n-mn1"/>
                             <constraint firstItem="lYG-il-FKU" firstAttribute="top" secondItem="5R9-CX-UX3" secondAttribute="bottom" constant="8" id="2wU-Io-Z1o"/>
                             <constraint firstItem="46r-zt-i9H" firstAttribute="top" secondItem="wFn-Yb-3CV" secondAttribute="top" id="ILS-0D-Lz1"/>
                             <constraint firstItem="Ol6-f1-Wef" firstAttribute="top" secondItem="46r-zt-i9H" secondAttribute="bottom" id="OUN-sg-fSL"/>
@@ -134,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fu-MH-GGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="186"/>
+            <point key="canvasLocation" x="-137" y="236"/>
         </scene>
         <!--Event View Controller-->
         <scene sceneID="RTo-AY-mdm">
@@ -246,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6i-Fp-KPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1655" y="186"/>
+            <point key="canvasLocation" x="-138" y="949"/>
         </scene>
         <!--Pick Blood Group View Controller-->
         <scene sceneID="gXf-vo-8nG">
@@ -303,14 +312,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DwR-2e-6Wt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="-573"/>
+            <point key="canvasLocation" x="254" y="-546"/>
+        </scene>
+        <!--Events Table View Controller-->
+        <scene sceneID="J3i-VL-C2L">
+            <objects>
+                <tableViewController id="pbu-OB-E4Q" customClass="EventsTableViewController" customModule="Donor" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cpv-pn-lah">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="7Ek-Gp-cQD" customClass="EventViewCell" customModule="Donor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Ek-Gp-cQD" id="INs-dF-eKT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="aQk-ck-zyT">
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="b5C-Zs-Nxe"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="blood group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJa-au-Nwl">
+                                            <rect key="frame" x="52" y="12" width="92" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JJa-au-Nwl" firstAttribute="leading" secondItem="aQk-ck-zyT" secondAttribute="trailing" constant="8" id="KQ2-l2-fLg"/>
+                                        <constraint firstItem="JJa-au-Nwl" firstAttribute="centerY" secondItem="aQk-ck-zyT" secondAttribute="centerY" id="XT9-7I-YHE"/>
+                                        <constraint firstAttribute="bottom" secondItem="aQk-ck-zyT" secondAttribute="bottom" id="e6k-MU-7dZ"/>
+                                        <constraint firstItem="aQk-ck-zyT" firstAttribute="top" secondItem="INs-dF-eKT" secondAttribute="top" id="hHb-bK-FxU"/>
+                                        <constraint firstItem="aQk-ck-zyT" firstAttribute="leading" secondItem="INs-dF-eKT" secondAttribute="leading" id="vNR-f0-kXL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bloodGroupLabel" destination="JJa-au-Nwl" id="Iml-5v-zhV"/>
+                                    <outlet property="bloodImage" destination="aQk-ck-zyT" id="ll3-pz-ePc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pbu-OB-E4Q" id="6jv-ZZ-JgL"/>
+                            <outlet property="delegate" destination="pbu-OB-E4Q" id="PXh-S1-0WZ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ay7-je-5Td" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="612" y="235"/>
         </scene>
     </scenes>
     <resources>
         <image name="Image" width="25" height="25"/>
+        <image name="menu" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jGW-fg-2dZ"/>
-        <segue reference="CdV-4G-n82"/>
+        <segue reference="Oly-Bb-bQc"/>
+        <segue reference="Xio-od-T8V"/>
     </inferredMetricsTieBreakers>
 </document>

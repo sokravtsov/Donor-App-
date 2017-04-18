@@ -68,11 +68,11 @@ class EventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             return
         }
         
-        DataLoader.sharedInstance.sendEventToFirebase(latitude: unwrapLat,
-                                                      longitude: unwrapLon,
-                                                      bloodGroup: unwrapGroup,
-                                                      date: unwrapDate,
-                                                      description: textView.text)
+        DataLoader.shared.sendEventToFirebase(latitude: unwrapLat,
+                                              longitude: unwrapLon,
+                                              bloodGroup: unwrapGroup,
+                                              date: unwrapDate,
+                                              description: textView.text)
         print("Event sended to Firebase")
         showAlertAndDismiss(title: "Event created 🙏🏽", message: "Every donor with \(unwrapGroup) blood will see this event")
     }

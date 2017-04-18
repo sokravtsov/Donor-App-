@@ -10,12 +10,10 @@ import Foundation
 
 final class Profile {
     
-    class var sharedProfile: Profile {
-        return _sharedProfile
-    }
+    static let shared = Profile()
     
     var groupOfBlood: String? = nil
     
+    var events = [Event]()
+    
 }
-///Variable for singleton
-private let _sharedProfile = Profile()
