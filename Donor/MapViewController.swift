@@ -28,8 +28,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     var eventViewController: EventViewController!
     
-//    var events = [Event]()
-    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -43,6 +41,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        performUIUpdatesOnMain {
+            for event in Profile.shared.events {
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2D(latitude: Double(event.latitude)!, longitude: Double(event.longitude)!)
+                marker.title = event.bloodGroup
+                marker.snippet = String(describing: event.expiryDate)
+                marker.map = self.mapView
+                print("Event added")
+            }
+        }
     }
     
     // MARK: - Actions

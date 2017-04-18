@@ -27,5 +27,4 @@ class EventViewCell: UITableViewCell {
         self.event = event
         self.bloodGroupLabel.text = event.bloodGroup
     }
-    
 }

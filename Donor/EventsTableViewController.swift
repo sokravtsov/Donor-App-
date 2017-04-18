@@ -11,11 +11,18 @@ import Firebase
 import UIKit
 
 class EventsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet var tableView: UITableView!
     
-    // MARK: - Life Cycle
+    // MARK: - Actions
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func refreshDidTouch(_ sender: UIBarButtonItem) {
+        DataLoader.shared.getEvents()
+        tableView.reloadData()
+    }
+    
+    @IBAction func backDidTouch(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

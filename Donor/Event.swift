@@ -12,7 +12,7 @@ final class Event {
     
     var _bloodGroup: String!
     
-    var _expiryDate: Date!
+    var _expiryDate: String!
     
     var _description: String!
     
@@ -28,7 +28,7 @@ final class Event {
         return _bloodGroup
     }
     
-    var expiryDate: Date {
+    var expiryDate: String {
         return _expiryDate
     }
     
@@ -52,7 +52,7 @@ final class Event {
         return _eventID
     }
     
-    init(bloodGroup: String, expiryDate: Date, description: String, latitude: String, longitude: String, ownerID: String) {
+    init(bloodGroup: String, expiryDate: String, description: String, latitude: String, longitude: String, ownerID: String) {
         self._bloodGroup = bloodGroup
         self._expiryDate = expiryDate
         self._description = description
@@ -69,7 +69,7 @@ final class Event {
             self._bloodGroup = bloodGroup
         }
         
-        if let expiryDate = eventData["date"] as? Date {
+        if let expiryDate = eventData["date"] as? String {
             self._expiryDate = expiryDate
         }
         
