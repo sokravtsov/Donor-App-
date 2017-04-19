@@ -18,7 +18,9 @@ class EventsTableViewController: BasicViewController, UITableViewDelegate, UITab
     
     @IBAction func refreshDidTouch(_ sender: UIBarButtonItem) {
         DataLoader.shared.getEvents()
-        tableView.reloadData()
+        performUIUpdatesOnMain {
+            self.tableView.reloadData()
+        }
     }
     
     @IBAction func backDidTouch(_ sender: UIBarButtonItem) {
@@ -37,7 +39,7 @@ extension EventsTableViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let event = Profile.shared.events[indexPath.row]
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? EventViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.event, for: indexPath) as? EventViewCell {
             cell.configureCell(event: event)
             return cell
         } else {

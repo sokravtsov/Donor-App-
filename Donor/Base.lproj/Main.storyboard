@@ -107,6 +107,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ray-qy-xTR">
+                                <rect key="frame" x="323" y="132" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="gT8-c2-n0w"/>
+                                    <constraint firstAttribute="height" constant="44" id="ovI-cK-KHk"/>
+                                </constraints>
+                                <state key="normal" image="marker"/>
+                                <connections>
+                                    <action selector="pinDidTouch:" destination="upL-UO-vM5" eventType="touchUpInside" id="IiK-pu-PF4"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYG-il-FKU">
                                 <rect key="frame" x="323" y="28" width="44" height="44"/>
                                 <constraints>
@@ -137,6 +148,8 @@
                             <constraint firstItem="lYG-il-FKU" firstAttribute="top" secondItem="5R9-CX-UX3" secondAttribute="bottom" constant="8" id="2wU-Io-Z1o"/>
                             <constraint firstItem="46r-zt-i9H" firstAttribute="top" secondItem="wFn-Yb-3CV" secondAttribute="top" id="ILS-0D-Lz1"/>
                             <constraint firstItem="Ol6-f1-Wef" firstAttribute="top" secondItem="46r-zt-i9H" secondAttribute="bottom" id="OUN-sg-fSL"/>
+                            <constraint firstAttribute="trailing" secondItem="Ray-qy-xTR" secondAttribute="trailing" constant="8" id="QvS-8T-qIG"/>
+                            <constraint firstItem="Ray-qy-xTR" firstAttribute="top" secondItem="rWm-k2-nwX" secondAttribute="bottom" constant="8" id="RDa-2W-47K"/>
                             <constraint firstAttribute="trailing" secondItem="lYG-il-FKU" secondAttribute="trailing" constant="8" id="a5S-he-RwL"/>
                             <constraint firstAttribute="trailing" secondItem="46r-zt-i9H" secondAttribute="trailing" id="meh-b8-yVf"/>
                             <constraint firstItem="46r-zt-i9H" firstAttribute="leading" secondItem="wFn-Yb-3CV" secondAttribute="leading" id="r4G-2d-aKn"/>
@@ -432,6 +445,7 @@
     </scenes>
     <resources>
         <image name="Image" width="25" height="25"/>
+        <image name="marker" width="25" height="25"/>
         <image name="menu" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>

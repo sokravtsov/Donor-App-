@@ -55,3 +55,11 @@ enum Radius {
     static let corner = 5
 }
 
+enum CellIdentifier {
+    static let event = "cell"
+}
+
+enum FirebaseHeader {
+    static let events = "events"
+}
+

@@ -45,22 +45,17 @@ class MapViewController: BasicViewController, CLLocationManagerDelegate, GMSMapV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        performUIUpdatesOnMain {
-            for event in Profile.shared.events {
-                let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2D(latitude: Double(event.latitude)!, longitude: Double(event.longitude)!)
-                marker.title = event.bloodGroup
-                marker.snippet = String(describing: event.expiryDate)
-                marker.map = self.mapView
-            }
-        }
+        setupMarkers()
     }
     
     // MARK: - Actions
     
     @IBAction func buttonDidTouch(_ sender: UIButton) {
         self.performSegue(withIdentifier: Segue.toPickerVC, sender: self)
+    }
+    
+    @IBAction func pinDidTouch(_ sender: UIButton) {
+        setupMarkers()
     }
 }
 
@@ -77,7 +72,7 @@ extension MapViewController {
     }
 }
 
-// MARK: - didLongPressAt coordinate
+// MARK: - GMSMapViewDelegate
 extension MapViewController {
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
         latitude = coordinate.latitude.description
@@ -86,6 +81,7 @@ extension MapViewController {
     }
 }
 
+// MARK: - Transiotions
 extension MapViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segue.createEvent {
@@ -95,6 +91,20 @@ extension MapViewController {
             guard let unwrapLon = longitude else {return}
             vc.latitude = unwrapLat
             vc.longitude = unwrapLon
+        }
+    }
+}
+
+extension MapViewController {
+    fileprivate func setupMarkers() {
+        for event in Profile.shared.events {
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: Double(event.latitude)!, longitude: Double(event.longitude)!)
+            marker.title = event.bloodGroup
+            marker.snippet = String(describing: event.expiryDate)
+            performUIUpdatesOnMain {
+                marker.map = self.mapView
+            }
         }
     }
 }

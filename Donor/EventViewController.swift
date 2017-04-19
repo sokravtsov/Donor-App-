@@ -95,7 +95,6 @@ extension EventViewController {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         bloodGroup = bloodGroups[row] as String
-        print(bloodGroup!)
     }
 }
 
@@ -112,7 +111,5 @@ extension EventViewController {
         dateFormatter.dateStyle = DateFormatter.Style.medium
         dateFormatter.timeStyle = DateFormatter.Style.none
         expiredDate = dateFormatter.string(from: sender.date)
-        // FIXME: - Delete print
-        print(expiredDate!)
     }
 }

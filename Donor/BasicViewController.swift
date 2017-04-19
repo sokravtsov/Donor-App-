@@ -12,8 +12,11 @@ import ReachabilitySwift
 
 class BasicViewController: UIViewController {
    
+    // MARK: - Variables
     let reachability = Reachability()!
     
+    
+    // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -33,6 +36,9 @@ class BasicViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
+
+// MARK: - Reachability
 extension BasicViewController {
     func reachabilityChanged(note: NSNotification) {
         let reachability = note.object as! Reachability

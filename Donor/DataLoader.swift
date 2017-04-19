@@ -21,7 +21,7 @@ final class DataLoader {
     
     private var _refBase = base
     
-    private var _refEvents = base.child("events")
+    private var _refEvents = base.child(FirebaseHeader.events)
     
     var refBase: FIRDatabaseReference {
         return _refBase
@@ -38,14 +38,15 @@ final class DataLoader {
     /// Method for sending event to Firebase db
     func sendEventToFirebase(latitude: String, longitude: String, bloodGroup: String, date: String, description: String) {
         guard let uid = FIRAuth.auth()?.currentUser?.uid else {return}
-        base.child("events").childByAutoId().setValue(["latitude": latitude,
-                                                       "longitude": longitude,
-                                                       "blood_group": bloodGroup,
-                                                       "date": date,
-                                                       "description": description,
-                                                       "owner_id": uid])
+        base.child(FirebaseHeader.events).childByAutoId().setValue(["latitude": latitude,
+                                                                    "longitude": longitude,
+                                                                    "blood_group": bloodGroup,
+                                                                    "date": date,
+                                                                    "description": description,
+                                                                    "owner_id": uid])
     }
     
+    /// Method for parsing events from Firebase db
     func getEvents() {
         refEvents.observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -56,7 +57,6 @@ final class DataLoader {
                         Profile.shared.events.append(event)
                     }
                 }
-                print("marker added")
             }
         })
     }
