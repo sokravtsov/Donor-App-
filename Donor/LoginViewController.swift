@@ -12,7 +12,7 @@ import FirebaseAuth
 import FBSDKLoginKit
 import PermissionScope
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
     
     // MARK: - Outlets
     
@@ -29,7 +29,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     // MARK: - Variables
     
     let pscope = PermissionScope()
-
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +46,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }, cancelled: { (results) -> Void in
             print("thing was cancelled")
         })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         facebookLoginButton.delegate = self
         showActivityIndicator()

@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import UIKit
 
-class EventsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EventsTableViewController: BasicViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
     

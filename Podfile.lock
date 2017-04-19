@@ -62,6 +62,7 @@ PODS:
   - IQKeyboardManagerSwift (4.0.9)
   - PermissionScope (1.1.1)
   - Protobuf (3.2.1)
+  - ReachabilitySwift (3)
 
 DEPENDENCIES:
   - FBSDKLoginKit
@@ -73,6 +74,7 @@ DEPENDENCIES:
   - GooglePlaces
   - IQKeyboardManagerSwift (= 4.0.9)
   - PermissionScope
+  - ReachabilitySwift (~> 3)
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -92,7 +94,8 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
   PermissionScope: a30c16e015779ba27c97c124e7539e27b5829de2
   Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
 
-PODFILE CHECKSUM: 0608287913916d117ce846fb51b2d539a1bdfa27
+PODFILE CHECKSUM: c765e3ac1a67af1c0d5df675e29b71b89c72b7b0
 
 COCOAPODS: 1.2.0

@@ -10,4 +10,5 @@ target 'Donor' do
   pod 'Firebase/Database'
   pod 'FBSDKLoginKit'
   pod 'PermissionScope'
+  pod 'ReachabilitySwift', '~> 3'
 end

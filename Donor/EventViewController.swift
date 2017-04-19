@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class EventViewController: BasicViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     // MARK: - Outlets
     
