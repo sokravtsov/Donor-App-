@@ -70,7 +70,7 @@ extension PickBloodGroupViewController {
         
         var color: UIColor!
 
-        color = pickerView.selectedRow(inComponent: component) == row ? .red : .white
+        color = pickerView.selectedRow(inComponent: component) == row ? .red : .black
         
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName: color])
         return myTitle
@@ -78,7 +78,6 @@ extension PickBloodGroupViewController {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerView.reloadAllComponents()
-//        Profile.shared.groupOfBlood = bloodGroups[row]
         UserDefaults.standard.set(bloodGroups[row], forKey: UserDefaultsKey.groupOfBlood)
     }
 }

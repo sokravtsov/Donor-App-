@@ -65,7 +65,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SFn-fv-d8V" firstAttribute="top" secondItem="UgW-5L-Pqp" secondAttribute="bottom" constant="8" id="4K0-5B-JT0"/>
                             <constraint firstItem="K6a-yq-rQu" firstAttribute="top" secondItem="v0p-mT-iBW" secondAttribute="bottom" constant="8" id="4QM-yp-LO1"/>
@@ -405,7 +405,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="k4B-Je-Vqn" firstAttribute="leading" secondItem="xyg-ux-kT3" secondAttribute="leadingMargin" id="VBn-Lv-Pzu"/>
                             <constraint firstItem="V0q-Mj-HxQ" firstAttribute="centerY" secondItem="xyg-ux-kT3" secondAttribute="centerY" id="Zy6-gS-utc"/>
@@ -553,6 +553,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Oly-Bb-bQc"/>
-        <segue reference="Xio-od-T8V"/>
+        <segue reference="CdV-4G-n82"/>
     </inferredMetricsTieBreakers>
 </document>

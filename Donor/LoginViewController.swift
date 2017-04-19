@@ -36,9 +36,9 @@ class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
         
         // Set up permissions
         pscope.addPermission(NotificationsPermission(notificationCategories: nil),
-                             message: "We use this to send you\r\nspam and love notes")
+                             message: "We use this to send you\r\nnotification about blood donating")
         pscope.addPermission(LocationWhileInUsePermission(),
-                             message: "We use this to track\r\nwhere you live")
+                             message: "We use this to track\r\nyour location")
         
         // Show dialog with callbacks
         pscope.show({ finished, results in
@@ -52,8 +52,9 @@ class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
         super.viewWillAppear(animated)
         
         facebookLoginButton.delegate = self
-        showActivityIndicator()
+        
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
+            
             if user != nil {
                 self.performSegue(withIdentifier: Segue.fromLoginToMap, sender: nil)
             }
@@ -119,6 +120,7 @@ class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
 extension LoginViewController {
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
         if error != nil {
             print (error!.localizedDescription)
             return
@@ -127,6 +129,7 @@ extension LoginViewController {
         let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+            
             if error != nil {
                 print (error ?? "")
                 return
