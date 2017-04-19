@@ -13,6 +13,8 @@ import Firebase
 import FirebaseMessaging
 import UserNotifications
 import FBSDKCoreKit
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                          name: NSNotification.Name.firInstanceIDTokenRefresh, object: nil)
         
         UIApplication.shared.applicationIconBadgeNumber = 0
+        
+        Fabric.with([Crashlytics.self])
 
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

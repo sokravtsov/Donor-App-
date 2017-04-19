@@ -11,4 +11,6 @@ target 'Donor' do
   pod 'FBSDKLoginKit'
   pod 'PermissionScope'
   pod 'ReachabilitySwift', '~> 3'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end

@@ -105,7 +105,6 @@ extension MapViewController {
             marker.position = CLLocationCoordinate2D(latitude: Double(event.latitude)!, longitude: Double(event.longitude)!)
             marker.title = event.bloodGroup
             marker.snippet = String(describing: event.expiryDate)
-            marker.appearAnimation = .pop
             guard let bloodGroup = Profile.shared.groupOfBlood else {return}
             marker.icon = bloodGroup == event.bloodGroup ? GMSMarker.markerImage(with: .red) : GMSMarker.markerImage(with: .black)
             performUIUpdatesOnMain {
