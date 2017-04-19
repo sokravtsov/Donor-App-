@@ -48,7 +48,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         })
         
         facebookLoginButton.delegate = self
-        
+        showActivityIndicator()
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
                 self.performSegue(withIdentifier: Segue.fromLoginToMap, sender: nil)
@@ -61,6 +61,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     // MARK: - Actions
     
     @IBAction func LoginDidTouch(_ sender: UIButton) {
+        showActivityIndicator()
         FIRAuth.auth()!.signIn(withEmail: emailTextField.text!,
                                password: passwordTextField.text!)
     }
@@ -73,13 +74,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             let emailField = alert.textFields![0]
             let passwordField = alert.textFields![1]
             
+            self.showActivityIndicator()
+            
             FIRAuth.auth()!.createUser(withEmail: emailField.text!, password: passwordField.text!) { user, error in
+                
                 // Success - send email/pass to firebase & segue to picker VC
                 if error == nil {
                     FIRAuth.auth()!.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
                     self.performSegue(withIdentifier: Segue.toPickerGroupOfBlood, sender: self)
+                    
                 // Alert if email not valid
                 } else {
+                    self.hideActivityIndicator()
                     self.showAlert(title: ErrorIs.notValidEmail, message: Constants.enterEmailAgain)
                 }
             }

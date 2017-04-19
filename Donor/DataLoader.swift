@@ -56,6 +56,7 @@ final class DataLoader {
                         Profile.shared.events.append(event)
                     }
                 }
+                print("marker added")
             }
         })
     }

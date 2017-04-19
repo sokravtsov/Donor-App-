@@ -53,7 +53,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                 marker.title = event.bloodGroup
                 marker.snippet = String(describing: event.expiryDate)
                 marker.map = self.mapView
-                print("Event added")
             }
         }
     }
