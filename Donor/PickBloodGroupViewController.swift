@@ -78,7 +78,7 @@ extension PickBloodGroupViewController {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerView.reloadAllComponents()
-        Profile.shared.groupOfBlood = bloodGroups[row]
+//        Profile.shared.groupOfBlood = bloodGroups[row]
         UserDefaults.standard.set(bloodGroups[row], forKey: UserDefaultsKey.groupOfBlood)
     }
 }

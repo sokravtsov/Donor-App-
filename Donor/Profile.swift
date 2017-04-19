@@ -12,7 +12,9 @@ final class Profile {
     
     static let shared = Profile()
     
-    var groupOfBlood: String? = nil
+    var groupOfBlood: String? {
+        return UserDefaults.standard.value(forKey: UserDefaultsKey.groupOfBlood) as? String
+    }
     
     var events = [Event]()
     

@@ -29,6 +29,7 @@
 		82B6AADC1EA7D79F00893174 /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6AADB1EA7D79F00893174 /* UIViewController+ActivityIndicator.swift */; };
 		82B6AADE1EA7D7FE00893174 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6AADD1EA7D7FE00893174 /* Animations.swift */; };
 		82B6AAE21EA7ED9300893174 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6AAE11EA7ED9300893174 /* BasicViewController.swift */; };
+		82B6AAE41EA80EB200893174 /* EventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6AAE31EA80EB200893174 /* EventInfoViewController.swift */; };
 		82D51E7C1EA50D740070B10A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D51E7B1EA50D740070B10A /* Event.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		82B6AADB1EA7D79F00893174 /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		82B6AADD1EA7D7FE00893174 /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		82B6AAE11EA7ED9300893174 /* BasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		82B6AAE31EA80EB200893174 /* EventInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoViewController.swift; sourceTree = "<group>"; };
 		82D51E7B1EA50D740070B10A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DC72BD702B33698BDC395806 /* Pods-Donor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Donor/Pods-Donor.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 				82A006B51E9ED16F00C35B1D /* MapViewController.swift */,
 				82A006B71E9ED90400C35B1D /* EventViewController.swift */,
 				82B6AAD21EA6539100893174 /* EventsTableViewController.swift */,
+				82B6AAE31EA80EB200893174 /* EventInfoViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				82B6AAD11EA5611400893174 /* DataLoader.swift in Sources */,
 				82A006CC1EA1345F00C35B1D /* Alerts.swift in Sources */,
 				82A006A21E9ECBD200C35B1D /* AppDelegate.swift in Sources */,
+				82B6AAE41EA80EB200893174 /* EventInfoViewController.swift in Sources */,
 				82B6AADA1EA7D77100893174 /* UIScreen+Size.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -276,7 +276,93 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6i-Fp-KPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-138" y="949"/>
+            <point key="canvasLocation" x="-591" y="1020"/>
+        </scene>
+        <!--Delegate-->
+        <scene sceneID="Un5-IC-KYd">
+            <objects>
+                <viewController id="Qll-IL-tGy" customClass="EventInfoViewController" customModule="Donor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xrJ-FM-pwE"/>
+                        <viewControllerLayoutGuide type="bottom" id="g6y-N4-HR5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fmz-0W-NvZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5T0-Th-07z">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Blood Donation Event" id="Jvm-ti-h8j">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="K8m-dH-dn7">
+                                            <connections>
+                                                <action selector="backButtonDidTouch:" destination="Qll-IL-tGy" id="aZN-rj-ThW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lD-8j-8Fo" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="212"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="212" id="N3E-Wc-cxa"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="Qll-IL-tGy" id="dF2-lt-qrn"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="528-dI-Gfg">
+                                <rect key="frame" x="16" y="317.5" width="343" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnl-Qe-9Qz">
+                                <rect key="frame" x="16" y="284" width="343" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <color key="textColor" red="1" green="0.098039215690000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihb-Yw-Lzg">
+                                <rect key="frame" x="16" y="351" width="343" height="296"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5T0-Th-07z" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leading" id="8dA-r3-VpY"/>
+                            <constraint firstItem="528-dI-Gfg" firstAttribute="top" secondItem="hnl-Qe-9Qz" secondAttribute="bottom" constant="8" id="ErC-If-WAs"/>
+                            <constraint firstItem="hnl-Qe-9Qz" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leadingMargin" id="FSJ-CN-iGQ"/>
+                            <constraint firstAttribute="trailing" secondItem="9lD-8j-8Fo" secondAttribute="trailing" id="IRm-E7-67k"/>
+                            <constraint firstItem="9lD-8j-8Fo" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leading" id="M7G-mr-q7s"/>
+                            <constraint firstItem="hnl-Qe-9Qz" firstAttribute="top" secondItem="9lD-8j-8Fo" secondAttribute="bottom" constant="8" id="YGg-iS-u52"/>
+                            <constraint firstItem="528-dI-Gfg" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leadingMargin" id="Z8h-1N-5hi"/>
+                            <constraint firstItem="ihb-Yw-Lzg" firstAttribute="top" secondItem="528-dI-Gfg" secondAttribute="bottom" constant="8" id="Zcf-nz-lCm"/>
+                            <constraint firstItem="ihb-Yw-Lzg" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leadingMargin" id="b1b-xX-aPX"/>
+                            <constraint firstItem="ihb-Yw-Lzg" firstAttribute="trailing" secondItem="Fmz-0W-NvZ" secondAttribute="trailingMargin" id="bIf-7K-ofP"/>
+                            <constraint firstItem="hnl-Qe-9Qz" firstAttribute="trailing" secondItem="Fmz-0W-NvZ" secondAttribute="trailingMargin" id="eb4-iz-3EP"/>
+                            <constraint firstItem="5T0-Th-07z" firstAttribute="top" secondItem="xrJ-FM-pwE" secondAttribute="bottom" id="nhj-6l-6X3"/>
+                            <constraint firstItem="9lD-8j-8Fo" firstAttribute="top" secondItem="5T0-Th-07z" secondAttribute="bottom" id="qxd-rS-2mC"/>
+                            <constraint firstItem="528-dI-Gfg" firstAttribute="trailing" secondItem="Fmz-0W-NvZ" secondAttribute="trailingMargin" id="r27-kM-kjG"/>
+                            <constraint firstItem="g6y-N4-HR5" firstAttribute="top" secondItem="ihb-Yw-Lzg" secondAttribute="bottom" constant="20" id="uBY-I8-R47"/>
+                            <constraint firstAttribute="trailing" secondItem="5T0-Th-07z" secondAttribute="trailing" id="x0g-Ee-Pxd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qKR-pc-HC2"/>
+                    <connections>
+                        <outlet property="bloodGroup" destination="hnl-Qe-9Qz" id="JMd-2p-2dJ"/>
+                        <outlet property="dateLabel" destination="528-dI-Gfg" id="L1L-j2-8Ui"/>
+                        <outlet property="descriptionTextView" destination="ihb-Yw-Lzg" id="7a9-pX-ltM"/>
+                        <outlet property="mapView" destination="9lD-8j-8Fo" id="dAR-I9-KD1"/>
+                        <outlet property="navBar" destination="5T0-Th-07z" id="FEA-fs-Gh4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x8v-4O-bhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="824.79999999999995" y="1019.640179910045"/>
         </scene>
         <!--Pick Blood Group View Controller-->
         <scene sceneID="gXf-vo-8nG">
@@ -338,7 +424,7 @@
             </objects>
             <point key="canvasLocation" x="950" y="-546"/>
         </scene>
-        <!--Events Table View Controller-->
+        <!--Blood Donation Events-->
         <scene sceneID="J3i-VL-C2L">
             <objects>
                 <tableViewController id="pbu-OB-E4Q" customClass="EventsTableViewController" customModule="Donor" customModuleProvider="target" sceneMemberID="viewController">
@@ -386,7 +472,7 @@
                             <outlet property="delegate" destination="pbu-OB-E4Q" id="PXh-S1-0WZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="yfP-3Q-tDL">
+                    <navigationItem key="navigationItem" title="Blood Donation Events" id="yfP-3Q-tDL">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="R87-HM-bOu">
                             <connections>
                                 <action selector="backDidTouch:" destination="pbu-OB-E4Q" id="KBb-b8-QsB"/>
@@ -400,11 +486,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Cpv-pn-lah" id="5he-BR-0Bd"/>
+                        <segue destination="Qll-IL-tGy" kind="showDetail" identifier="toEventInfo" id="hV3-0k-9ZF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ay7-je-5Td" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="235"/>
+            <point key="canvasLocation" x="1250" y="234"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xcq-do-gxl">
@@ -444,9 +531,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="25" height="25"/>
-        <image name="marker" width="25" height="25"/>
-        <image name="menu" width="25" height="25"/>
+        <image name="Image" width="22" height="22"/>
+        <image name="marker" width="22" height="22"/>
+        <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jGW-fg-2dZ"/>

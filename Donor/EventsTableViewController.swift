@@ -12,7 +12,15 @@ import UIKit
 
 class EventsTableViewController: BasicViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // MARK: - Outlets
+    
     @IBOutlet var tableView: UITableView!
+    
+    // MARK: - Variables
+    
+    var selectedEvent: Event?
+    
+    var eventInfoViewController: EventInfoViewController!
     
     // MARK: - Actions
     
@@ -28,6 +36,9 @@ class EventsTableViewController: BasicViewController, UITableViewDelegate, UITab
     }
 }
 
+// MARK: - Extensions
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension EventsTableViewController {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -44,6 +55,22 @@ extension EventsTableViewController {
             return cell
         } else {
             return EventViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedEvent = Profile.shared.events[(indexPath as NSIndexPath).row]
+        performSegue(withIdentifier: "toEventInfo", sender: self)
+    }
+}
+
+// MARK: - Transitions
+extension EventsTableViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEventInfo" {
+            let vc = segue.destination as! EventInfoViewController
+            self.eventInfoViewController = vc
+            vc.event = selectedEvent
         }
     }
 }

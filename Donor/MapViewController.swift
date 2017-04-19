@@ -19,7 +19,7 @@ class MapViewController: BasicViewController, CLLocationManagerDelegate, GMSMapV
     @IBOutlet weak var settingsButton: UIButton!
     
     // MARK: - Variables
-    
+        
     let locationManager = CLLocationManager()
     
     var latitude: String?
@@ -34,7 +34,9 @@ class MapViewController: BasicViewController, CLLocationManagerDelegate, GMSMapV
         super.viewDidLoad()
         
         DataLoader.shared.getEvents()
+        
         mapView.delegate = self
+        
         locationManager.delegate = self
         
         CLLocationManager.authorizationStatus() != .authorizedWhenInUse ? locationManager.requestWhenInUseAuthorization() : locationManager.startUpdatingLocation()
@@ -95,6 +97,7 @@ extension MapViewController {
     }
 }
 
+// MARK: - SetupUI
 extension MapViewController {
     fileprivate func setupMarkers() {
         for event in Profile.shared.events {
@@ -102,6 +105,9 @@ extension MapViewController {
             marker.position = CLLocationCoordinate2D(latitude: Double(event.latitude)!, longitude: Double(event.longitude)!)
             marker.title = event.bloodGroup
             marker.snippet = String(describing: event.expiryDate)
+            marker.appearAnimation = .pop
+            guard let bloodGroup = Profile.shared.groupOfBlood else {return}
+            marker.icon = bloodGroup == event.bloodGroup ? GMSMarker.markerImage(with: .red) : GMSMarker.markerImage(with: .black)
             performUIUpdatesOnMain {
                 marker.map = self.mapView
             }
