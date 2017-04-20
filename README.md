@@ -15,6 +15,6 @@ Donor is a helpful app with a map that shows markers with a blood donation event
 - Accessing networked data using Firebase
 - Authenticating a user using Facebook API, use Keychain sharing feature
 - Creating user interfaces that are responsive, and communicate network activity
-- Use Core Location and the Google Maps API for to display annotated markera on a map
+- Use CoreLocation and the GoogleMaps API for to display annotated markers on a map
 
 
