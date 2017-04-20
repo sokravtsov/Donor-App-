@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import UIKit
 
-class EventsTableViewController: BasicViewController, UITableViewDelegate, UITableViewDataSource {
+final class EventsTableViewController: BasicViewController, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: - Outlets
     
@@ -60,14 +60,14 @@ extension EventsTableViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedEvent = Profile.shared.events[(indexPath as NSIndexPath).row]
-        performSegue(withIdentifier: "toEventInfo", sender: self)
+        performSegue(withIdentifier: Segue.toEventInfo, sender: self)
     }
 }
 
 // MARK: - Transitions
 extension EventsTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEventInfo" {
+        if segue.identifier == Segue.toEventInfo {
             let vc = segue.destination as! EventInfoViewController
             self.eventInfoViewController = vc
             vc.event = selectedEvent

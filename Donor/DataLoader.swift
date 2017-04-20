@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
+/// Variable for Firebase Reference 
 let base = FIRDatabase.database().reference()
 
 /// Networking class for sending and parsing data with Firebase

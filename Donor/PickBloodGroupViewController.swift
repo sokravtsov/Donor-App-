@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PickBloodGroupViewController: BasicViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+final class PickBloodGroupViewController: BasicViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // MARK: - Outlets
     

@@ -12,7 +12,7 @@ import FirebaseAuth
 import FBSDKLoginKit
 import PermissionScope
 
-class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
+final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
     
     // MARK: - Outlets
     

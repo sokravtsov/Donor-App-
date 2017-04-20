@@ -10,6 +10,8 @@ import Foundation
 
 final class Profile {
     
+    // MARK: - Variables
+    
     static let shared = Profile()
     
     var groupOfBlood: String? {
@@ -17,5 +19,4 @@ final class Profile {
     }
     
     var events = [Event]()
-    
 }

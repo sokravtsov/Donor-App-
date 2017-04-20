@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-class MapViewController: BasicViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+final class MapViewController: BasicViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     // MARK: - Outlets
     

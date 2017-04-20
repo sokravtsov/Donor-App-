@@ -10,6 +10,8 @@ import Foundation
 
 final class Event {
     
+    // MARK: - Variables
+    
     var _bloodGroup: String!
     
     var _expiryDate: String!
@@ -51,6 +53,8 @@ final class Event {
     var eventID: String {
         return _eventID
     }
+    
+    // MARK: - Initializer
     
     init(bloodGroup: String, expiryDate: String, description: String, latitude: String, longitude: String, ownerID: String) {
         self._bloodGroup = bloodGroup

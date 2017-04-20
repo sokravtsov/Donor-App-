@@ -49,6 +49,7 @@ enum Segue {
     static let fromLoginToMap = "fromLoginToMap"
     static let toPickerVC = "toPickerVC"
     static let createEvent = "createEvent"
+    static let toEventInfo = "toEventInfo"
 }
 
 enum Radius {

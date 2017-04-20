@@ -11,7 +11,7 @@ import UIKit
 import GoogleMaps
 import Firebase
 
-class EventInfoViewController: BasicViewController {
+final class EventInfoViewController: BasicViewController {
 
     // MARK: - Outlets
     
