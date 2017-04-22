@@ -34,9 +34,7 @@ final class MapViewController: BasicViewController, CLLocationManagerDelegate, G
         super.viewDidLoad()
         
         DataLoader.shared.getEvents()
-        
-        mapView.delegate = self
-        
+                
         locationManager.delegate = self
         
         CLLocationManager.authorizationStatus() != .authorizedWhenInUse ? locationManager.requestWhenInUseAuthorization() : locationManager.startUpdatingLocation()
@@ -53,7 +51,7 @@ final class MapViewController: BasicViewController, CLLocationManagerDelegate, G
     // MARK: - Actions
     
     @IBAction func buttonDidTouch(_ sender: UIButton) {
-        self.performSegue(withIdentifier: Segue.toPickerVC, sender: self)
+        performSegue(withIdentifier: Segue.toPickerVC, sender: self)
     }
     
     @IBAction func pinDidTouch(_ sender: UIButton) {
@@ -79,7 +77,7 @@ extension MapViewController {
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
         latitude = coordinate.latitude.description
         longitude = coordinate.longitude.description
-        self.performSegue(withIdentifier: Segue.createEvent, sender: self)
+        performSegue(withIdentifier: Segue.createEvent, sender: self)
     }
 }
 

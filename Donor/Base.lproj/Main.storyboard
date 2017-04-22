@@ -35,7 +35,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="LoginDidTouch:" destination="fyn-Qg-aws" eventType="touchUpInside" id="GYr-oO-1ZG"/>
+                                    <action selector="loginDidTouch:" destination="fyn-Qg-aws" eventType="touchUpInside" id="7vP-Li-ySe"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="v0p-mT-iBW">
@@ -101,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="-591" y="-546"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Delegate-->
         <scene sceneID="6ZV-dp-muC">
             <objects>
                 <viewController id="upL-UO-vM5" customClass="MapViewController" customModule="Donor" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,6 +116,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46r-zt-i9H" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="upL-UO-vM5" id="xQe-xB-V3U"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ray-qy-xTR">
                                 <rect key="frame" x="323" y="132" width="44" height="44"/>
@@ -552,7 +555,7 @@
         <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oly-Bb-bQc"/>
-        <segue reference="CdV-4G-n82"/>
+        <segue reference="jGW-fg-2dZ"/>
+        <segue reference="Xio-od-T8V"/>
     </inferredMetricsTieBreakers>
 </document>

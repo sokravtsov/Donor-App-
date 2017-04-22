@@ -65,7 +65,7 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
     
     // MARK: - Actions
     
-    @IBAction func LoginDidTouch(_ sender: UIButton) {
+    @IBAction func loginDidTouch(_ sender: UIButton) {
         showActivityIndicator()
         FIRAuth.auth()!.signIn(withEmail: emailTextField.text!,
                                password: passwordTextField.text!)
@@ -123,6 +123,7 @@ extension LoginViewController {
         
         if error != nil {
             print (error!.localizedDescription)
+            showAlert(title: "Login Error", message: "")
             return
         }
         
