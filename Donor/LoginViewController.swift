@@ -121,7 +121,7 @@ extension LoginViewController {
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
-        if error != nil {
+        guard error == nil else {
             print (error!.localizedDescription)
             showAlert(title: "Login Error", message: "")
             return
@@ -131,7 +131,7 @@ extension LoginViewController {
         
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             
-            if error != nil {
+            guard error == nil else {
                 print (error ?? "")
                 return
             }
