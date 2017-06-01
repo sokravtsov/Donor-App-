@@ -47,6 +47,9 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
             print("thing was cancelled")
         })
         
+        loginButton.layer.cornerRadius = CGFloat(Radius.corner)
+        facebookLoginButton.delegate = self
+        
         DataLoader.shared.getEvents()
     }
     
@@ -54,15 +57,12 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
         super.viewWillAppear(animated)
         
         showActivityIndicator()
-        facebookLoginButton.delegate = self
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.hideActivityIndicator()
                 self.performSegue(withIdentifier: Segue.fromLoginToMap, sender: nil)
+                self.hideActivityIndicator()
             }
         }
-        
-        loginButton.layer.cornerRadius = CGFloat(Radius.corner)
     }
     
     // MARK: - Actions
@@ -71,6 +71,7 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
         showActivityIndicator()
         FIRAuth.auth()!.signIn(withEmail: emailTextField.text!,
                                password: passwordTextField.text!)
+        hideActivityIndicator()
     }
     
     @IBAction func singUpDidTouch(_ sender: UIButton) {

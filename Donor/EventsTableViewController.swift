@@ -26,16 +26,24 @@ final class EventsTableViewController: BasicViewController, UITableViewDelegate,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView.reloadData()
+        performUIUpdatesOnMain {
+            self.showActivityIndicator()
+            self.tableView.reloadData()
+            self.hideActivityIndicator()
+        }
     }
     
     // MARK: - Actions
     
     @IBAction func refreshDidTouch(_ sender: UIBarButtonItem) {
-        showActivityIndicator()
+        performUIUpdatesOnMain {
+            self.showActivityIndicator()
+        }
         DataLoader.shared.getEvents()
-        self.tableView.reloadData()
-        hideActivityIndicator()
+        performUIUpdatesOnMain {
+            self.hideActivityIndicator()
+            self.tableView.reloadData()
+        }
     }
     
     @IBAction func backDidTouch(_ sender: UIBarButtonItem) {

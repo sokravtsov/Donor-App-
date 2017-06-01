@@ -33,7 +33,6 @@ final class PickBloodGroupViewController: BasicViewController, UIPickerViewDeleg
         super.viewDidLoad()
         
         self.titleLabel.text = Constants.groupOfBlood
-        
         guard let groupOfBlood = UserDefaults.standard.value(forKey: UserDefaultsKey.groupOfBlood) else { return }
         // Download saved group of blood from UserDefaults and select at this row
         if let groupOfBlood = bloodGroups.index(of: groupOfBlood as! String) {

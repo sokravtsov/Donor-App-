@@ -41,8 +41,8 @@ final class EventInfoViewController: BasicViewController {
         guard let bloodGroupString = event?.bloodGroup, let date = event?.expiryDate,
             let descript = event?.description, let ownerID = event?.ownerID,
             let lat = event?.latitude, let lon = event?.longitude else { return }
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else {return}
         
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else {return}
         
         bloodGroup.text = "Required blood group \(bloodGroupString)"
         dateLabel.text = "Expiry date \(date)"

@@ -60,10 +60,7 @@ final class DataLoader {
     
     /// Method for parsing events from Firebase db
     func getEvents() {
-        if !Profile.shared.events.isEmpty {
-            Profile.shared.events.removeAll()
-        }
-        
+        Profile.shared.events.removeAll()
         refEvents.observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {

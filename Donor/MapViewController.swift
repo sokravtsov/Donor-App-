@@ -25,11 +25,17 @@ final class MapViewController: BasicViewController, CLLocationManagerDelegate, G
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMarkers()
+        Profile.shared.groupOfBlood = UserDefaults.standard.value(forKey: UserDefaultsKey.groupOfBlood) as? String
         locationManager.delegate = self
         CLLocationManager.authorizationStatus() != .authorizedWhenInUse ? locationManager.requestWhenInUseAuthorization() : locationManager.startUpdatingLocation()
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
+        setupMarkers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupMarkers()
     }
     
     // MARK: - Actions

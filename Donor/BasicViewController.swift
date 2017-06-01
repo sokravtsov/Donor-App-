@@ -19,7 +19,6 @@ class BasicViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged),
                                                name: ReachabilityChangedNotification, object: reachability)
         do {
