@@ -92,7 +92,7 @@ extension MapViewController {
             marker.title = event.bloodGroup
             marker.snippet = String(describing: event.expiryDate)
             guard let bloodGroup = Profile.shared.groupOfBlood else {
-                showAlert(title: "Please Check You Group of Blood", message: "")
+                showAlertForChooseGroupOfBlood()
                 return
             }
             marker.icon = bloodGroup == event.bloodGroup ? GMSMarker.markerImage(with: .red) : GMSMarker.markerImage(with: .black)
@@ -101,4 +101,14 @@ extension MapViewController {
             }
         }
     }
+    
+    func showAlertForChooseGroupOfBlood() {
+        let alertController = UIAlertController(title: "Please Check You Group of Blood", message: "", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in
+            self.performSegue(withIdentifier: Segue.toPickerVC, sender: self)
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
+

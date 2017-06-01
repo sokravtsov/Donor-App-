@@ -53,11 +53,11 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        showActivityIndicator()
         facebookLoginButton.delegate = self
-        
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
-            
             if user != nil {
+                self.hideActivityIndicator()
                 self.performSegue(withIdentifier: Segue.fromLoginToMap, sender: nil)
             }
         }
@@ -74,7 +74,6 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
     }
     
     @IBAction func singUpDidTouch(_ sender: UIButton) {
-        
         let alert = UIAlertController(title: Constants.registration, message: "", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: Constants.save, style: .default) { action in
             

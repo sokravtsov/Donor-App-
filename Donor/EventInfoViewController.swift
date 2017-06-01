@@ -70,11 +70,22 @@ final class EventInfoViewController: BasicViewController {
     }
     
     @IBAction func deleteButtonDidTouch(_ sender: UIBarButtonItem) {
-        guard let key = event?.eventID else { return }
-        DataLoader.shared.deleteEventFromFirebase(key)
-        Profile.shared.events.remove(at: index!)
-        performUIUpdatesOnMain {
+        showAlertForDelete()
+    }
+}
+
+extension EventInfoViewController {
+    func showAlertForDelete() {
+        let alertController = UIAlertController(title: "Are you want to delete event?", message: "", preferredStyle: .alert)
+        let delete = UIAlertAction(title: "Delete", style: .default) { (UIAlertAction) in
+            guard let key = self.event?.eventID else { return }
+            DataLoader.shared.deleteEventFromFirebase(key)
+            Profile.shared.events.remove(at: self.index!)
             self.dismiss(animated: true, completion: nil)
         }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(delete)
+        alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
