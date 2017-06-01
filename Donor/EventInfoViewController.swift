@@ -25,9 +25,13 @@ final class EventInfoViewController: BasicViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
+    
     // MARK: - Variables
     
     var event: Event?
+    
+    var index: Int?
     
     // MARK: - Life Cycle
     
@@ -45,8 +49,10 @@ final class EventInfoViewController: BasicViewController {
         descriptionTextView.text = descript
         if ownerID == uid {
             navBar.topItem?.title = "My Donation Event 🚑"
+        } else {
+            deleteButton.isEnabled = false
+            deleteButton.tintColor = .clear
         }
-        
         
         let camera = GMSCameraPosition.camera(withLatitude: Double(lat)!, longitude: Double(lon)!, zoom: 15)
         let position = CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(lon)!)
@@ -61,5 +67,14 @@ final class EventInfoViewController: BasicViewController {
     
     @IBAction func backButtonDidTouch(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func deleteButtonDidTouch(_ sender: UIBarButtonItem) {
+        guard let key = event?.eventID else { return }
+        DataLoader.shared.deleteEventFromFirebase(key)
+        Profile.shared.events.remove(at: index!)
+        performUIUpdatesOnMain {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }

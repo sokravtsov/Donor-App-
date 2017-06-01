@@ -20,15 +20,24 @@ final class EventsTableViewController: BasicViewController, UITableViewDelegate,
     
     var selectedEvent: Event?
     
+    var selectedIndexPath: Int?
+    
     var eventInfoViewController: EventInfoViewController!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showActivityIndicator()
+        self.tableView.reloadData()
+        hideActivityIndicator()
+    }
     
     // MARK: - Actions
     
     @IBAction func refreshDidTouch(_ sender: UIBarButtonItem) {
+        showActivityIndicator()
         DataLoader.shared.getEvents()
-        performUIUpdatesOnMain {
-            self.tableView.reloadData()
-        }
+        self.tableView.reloadData()
+        hideActivityIndicator()
     }
     
     @IBAction func backDidTouch(_ sender: UIBarButtonItem) {
@@ -57,6 +66,7 @@ extension EventsTableViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedEvent = Profile.shared.events[(indexPath as NSIndexPath).row]
+        selectedIndexPath = indexPath.row
         performSegue(withIdentifier: Segue.toEventInfo, sender: self)
     }
 }
@@ -68,6 +78,7 @@ extension EventsTableViewController {
             let vc = segue.destination as! EventInfoViewController
             self.eventInfoViewController = vc
             vc.event = selectedEvent
+            vc.index = selectedIndexPath
         }
     }
 }

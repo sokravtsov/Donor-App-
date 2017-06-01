@@ -46,6 +46,8 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
         }, cancelled: { (results) -> Void in
             print("thing was cancelled")
         })
+        
+        DataLoader.shared.getEvents()
     }
     
     override func viewWillAppear(_ animated: Bool) {

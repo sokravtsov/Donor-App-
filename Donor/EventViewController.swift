@@ -11,21 +11,13 @@ import UIKit
 final class EventViewController: BasicViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     // MARK: - Outlets
-    
     @IBOutlet weak var cancelButton: UIButton!
-    
     @IBOutlet weak var doneButton: UIButton!
-    
     @IBOutlet weak var pickerView: UIPickerView!
-    
     @IBOutlet weak var chooceBloodLabel: UILabel!
-    
     @IBOutlet weak var descriptionLabel: UILabel!
-    
     @IBOutlet weak var textView: UITextView!
-    
     @IBOutlet weak var chooceDateLabel: UILabel!
-    
     @IBOutlet weak var datePickerView: UIDatePicker!
     
     // MARK: - Variables 
@@ -35,9 +27,8 @@ final class EventViewController: BasicViewController, UIPickerViewDelegate, UIPi
     
     /// Variable for saving expired date
     var expiredDate: String?
-    
+
     var latitude: String?
-    
     var longitude: String?
     
     /// Array with blood groups

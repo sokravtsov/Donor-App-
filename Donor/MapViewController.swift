@@ -13,49 +13,38 @@ import CoreLocation
 final class MapViewController: BasicViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     // MARK: - Outlets
-    
     @IBOutlet weak var mapView: GMSMapView!
-    
     @IBOutlet weak var settingsButton: UIButton!
     
     // MARK: - Variables
-        
     let locationManager = CLLocationManager()
-    
     var latitude: String?
-    
     var longitude: String?
-    
     var eventViewController: EventViewController!
     
     // MARK: - Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        DataLoader.shared.getEvents()
-                
+        setupMarkers()
         locationManager.delegate = self
-        
         CLLocationManager.authorizationStatus() != .authorizedWhenInUse ? locationManager.requestWhenInUseAuthorization() : locationManager.startUpdatingLocation()
-        
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupMarkers()
-    }
-    
     // MARK: - Actions
-    
     @IBAction func buttonDidTouch(_ sender: UIButton) {
         performSegue(withIdentifier: Segue.toPickerVC, sender: self)
     }
     
     @IBAction func pinDidTouch(_ sender: UIButton) {
-        setupMarkers()
+        if !Profile.shared.events.isEmpty {
+            mapView.clear()
+            setupMarkers()
+            print("setupMarkers-------------")
+        } else {
+            print("Profile.shared.events.isEmpty-------------")
+        }
     }
 }
 
@@ -67,7 +56,6 @@ extension MapViewController {
         if let location = locations.first {
             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
             locationManager.stopUpdatingLocation()
-            
         }
     }
 }
@@ -103,7 +91,10 @@ extension MapViewController {
             marker.position = CLLocationCoordinate2D(latitude: Double(event.latitude)!, longitude: Double(event.longitude)!)
             marker.title = event.bloodGroup
             marker.snippet = String(describing: event.expiryDate)
-            guard let bloodGroup = Profile.shared.groupOfBlood else {return}
+            guard let bloodGroup = Profile.shared.groupOfBlood else {
+                showAlert(title: "Please Check You Group of Blood", message: "")
+                return
+            }
             marker.icon = bloodGroup == event.bloodGroup ? GMSMarker.markerImage(with: .red) : GMSMarker.markerImage(with: .black)
             performUIUpdatesOnMain {
                 marker.map = self.mapView

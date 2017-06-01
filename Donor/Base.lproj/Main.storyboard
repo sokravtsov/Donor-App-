@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fyn-Qg-aws">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fyn-Qg-aws">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -85,6 +85,7 @@
                             <constraint firstItem="ir6-TT-8Nz" firstAttribute="top" secondItem="OEU-en-cMB" secondAttribute="bottom" constant="20" id="i3q-cC-vES"/>
                             <constraint firstItem="v0p-mT-iBW" firstAttribute="leading" secondItem="vXt-fM-0Ez" secondAttribute="leadingMargin" id="oTb-OL-2fj"/>
                             <constraint firstItem="UgW-5L-Pqp" firstAttribute="trailing" secondItem="vXt-fM-0Ez" secondAttribute="trailingMargin" id="wEX-fq-Nz5"/>
+                            <constraint firstItem="OEU-en-cMB" firstAttribute="top" secondItem="uK2-rH-j8J" secondAttribute="bottom" constant="77" id="ywn-ow-GQ1"/>
                         </constraints>
                     </view>
                     <connections>
@@ -315,6 +316,11 @@
                                                 <action selector="backButtonDidTouch:" destination="Qll-IL-tGy" id="aZN-rj-ThW"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="CLg-aJ-gyj">
+                                            <connections>
+                                                <action selector="deleteButtonDidTouch:" destination="Qll-IL-tGy" id="omG-AS-0wR"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -372,6 +378,7 @@
                     <connections>
                         <outlet property="bloodGroup" destination="hnl-Qe-9Qz" id="JMd-2p-2dJ"/>
                         <outlet property="dateLabel" destination="528-dI-Gfg" id="L1L-j2-8Ui"/>
+                        <outlet property="deleteButton" destination="CLg-aJ-gyj" id="QmZ-2a-fGH"/>
                         <outlet property="descriptionTextView" destination="ihb-Yw-Lzg" id="7a9-pX-ltM"/>
                         <outlet property="mapView" destination="9lD-8j-8Fo" id="dAR-I9-KD1"/>
                         <outlet property="navBar" destination="5T0-Th-07z" id="FEA-fs-Gh4"/>
