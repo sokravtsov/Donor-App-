@@ -25,6 +25,7 @@ final class MapViewController: BasicViewController, CLLocationManagerDelegate, G
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        DataLoader.shared.getEvents()
         Profile.shared.groupOfBlood = UserDefaults.standard.value(forKey: UserDefaultsKey.groupOfBlood) as? String
         locationManager.delegate = self
         CLLocationManager.authorizationStatus() != .authorizedWhenInUse ? locationManager.requestWhenInUseAuthorization() : locationManager.startUpdatingLocation()

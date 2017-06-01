@@ -63,6 +63,7 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
                 self.hideActivityIndicator()
             }
         }
+        hideActivityIndicator()
     }
     
     // MARK: - Actions
@@ -71,7 +72,6 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
         showActivityIndicator()
         FIRAuth.auth()!.signIn(withEmail: emailTextField.text!,
                                password: passwordTextField.text!)
-        hideActivityIndicator()
     }
     
     @IBAction func singUpDidTouch(_ sender: UIButton) {
@@ -88,8 +88,10 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
                 // Success - send email/pass to firebase & segue to picker VC
                 if error == nil {
                     FIRAuth.auth()!.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
-                    self.performSegue(withIdentifier: Segue.toPickerGroupOfBlood, sender: self)
-                    
+                    self.performUIUpdatesOnMain {
+                        self.hideActivityIndicator()
+                        self.performSegue(withIdentifier: Segue.toPickerGroupOfBlood, sender: self)
+                    }
                 // Alert if email not valid
                 } else {
                     self.hideActivityIndicator()
