@@ -28,7 +28,7 @@ final class EventInfoViewController: BasicViewController {
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     
     // MARK: - Variables
-    
+        
     var event: Event?
     
     var index: Int?
@@ -78,9 +78,9 @@ extension EventInfoViewController {
     func showAlertForDelete() {
         let alertController = UIAlertController(title: "Are you want to delete event?", message: "", preferredStyle: .alert)
         let delete = UIAlertAction(title: "Delete", style: .default) { (UIAlertAction) in
-            guard let key = self.event?.eventID else { return }
+            guard let key = self.event?.eventID, let index = self.index else { return }
             DataLoader.shared.deleteEventFromFirebase(key)
-            Profile.shared.events.remove(at: self.index!)
+            Profile.shared.events.remove(at: index)
             self.dismiss(animated: true, completion: nil)
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)

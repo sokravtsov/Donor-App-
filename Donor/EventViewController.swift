@@ -29,6 +29,7 @@ final class EventViewController: BasicViewController, UIPickerViewDelegate, UIPi
     var expiredDate: String?
 
     var latitude: String?
+    
     var longitude: String?
     
     /// Array with blood groups

@@ -48,9 +48,7 @@ final class PickBloodGroupViewController: BasicViewController, UIPickerViewDeleg
 }
 
 // MARK: - Extensions
-
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
-
 extension PickBloodGroupViewController {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

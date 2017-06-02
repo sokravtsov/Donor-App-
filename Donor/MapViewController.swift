@@ -20,18 +20,18 @@ final class MapViewController: BasicViewController, CLLocationManagerDelegate, G
     let locationManager = CLLocationManager()
     var latitude: String?
     var longitude: String?
-    var eventViewController: EventViewController!
+    weak var eventViewController: EventViewController!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataLoader.shared.getEvents()
+//        DataLoader.shared.getEvents()
         Profile.shared.groupOfBlood = UserDefaults.standard.value(forKey: UserDefaultsKey.groupOfBlood) as? String
         locationManager.delegate = self
         CLLocationManager.authorizationStatus() != .authorizedWhenInUse ? locationManager.requestWhenInUseAuthorization() : locationManager.startUpdatingLocation()
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
-        setupMarkers()
+//        setupMarkers()
     }
     
     override func viewWillAppear(_ animated: Bool) {

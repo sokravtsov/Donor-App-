@@ -22,10 +22,14 @@ final class EventsTableViewController: BasicViewController, UITableViewDelegate,
     
     var selectedIndexPath: Int?
     
-    var eventInfoViewController: EventInfoViewController!
+    var eventList = [Event]()
+    
+    weak var eventInfoViewController: EventInfoViewController!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        eventList.removeAll()
+        eventList = Profile.shared.events
         performUIUpdatesOnMain {
             self.showActivityIndicator()
             self.tableView.reloadData()
@@ -57,11 +61,11 @@ final class EventsTableViewController: BasicViewController, UITableViewDelegate,
 extension EventsTableViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Profile.shared.events.count
+        return eventList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let event = Profile.shared.events[indexPath.row]
+        let event = eventList[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.event, for: indexPath) as? EventViewCell {
             cell.configureCell(event: event)
             return cell
@@ -71,7 +75,7 @@ extension EventsTableViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedEvent = Profile.shared.events[(indexPath as NSIndexPath).row]
+        selectedEvent = eventList[(indexPath as NSIndexPath).row]
         selectedIndexPath = indexPath.row
         performSegue(withIdentifier: Segue.toEventInfo, sender: self)
     }
