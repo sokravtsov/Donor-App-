@@ -503,11 +503,6 @@
                                 <action selector="backDidTouch:" destination="pbu-OB-E4Q" id="KBb-b8-QsB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="5gf-oh-16M">
-                            <connections>
-                                <action selector="refreshDidTouch:" destination="pbu-OB-E4Q" id="nG0-3s-AQH"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Cpv-pn-lah" id="5he-BR-0Bd"/>

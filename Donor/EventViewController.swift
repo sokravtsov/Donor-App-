@@ -59,7 +59,7 @@ final class EventViewController: BasicViewController, UIPickerViewDelegate, UIPi
             showAlert(title: "Error 😓", message: "You should choose blood group and expired date")
             return
         }
-        
+        Profile.shared.events.removeAll()
         DataLoader.shared.sendEventToFirebase(latitude: unwrapLat,
                                               longitude: unwrapLon,
                                               bloodGroup: unwrapGroup,

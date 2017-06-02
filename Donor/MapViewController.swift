@@ -92,7 +92,8 @@ extension MapViewController {
 
 // MARK: - SetupUI
 extension MapViewController {
-    fileprivate func setupMarkers() {
+    
+    func setupMarkers() {
         for event in Profile.shared.events {
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2D(latitude: Double(event.latitude)!, longitude: Double(event.longitude)!)

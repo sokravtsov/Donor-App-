@@ -38,17 +38,7 @@ final class EventsTableViewController: BasicViewController, UITableViewDelegate,
     }
     
     // MARK: - Actions
-    
-    @IBAction func refreshDidTouch(_ sender: UIBarButtonItem) {
-        performUIUpdatesOnMain {
-            self.showActivityIndicator()
-        }
-        DataLoader.shared.getEvents()
-        performUIUpdatesOnMain {
-            self.hideActivityIndicator()
-            self.tableView.reloadData()
-        }
-    }
+
     
     @IBAction func backDidTouch(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)

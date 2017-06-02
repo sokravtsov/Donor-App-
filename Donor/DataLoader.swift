@@ -32,8 +32,6 @@ final class DataLoader {
         return _refEvents
     }
     
-    var mapVC: MapViewController!
-    
     // MARK: - Methods
     
     /// Method for sending event to Firebase db
@@ -60,6 +58,7 @@ final class DataLoader {
     
     /// Method for parsing events from Firebase db
     func getEvents() {
+        var index = 0
         Profile.shared.events.removeAll()
         refEvents.observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -68,8 +67,10 @@ final class DataLoader {
                         let id = snap.key
                         let event = Event(eventID: id, eventData: eventDict)
                         Profile.shared.events.append(event)
+                        index += 1
                     }
                 }
+                print("\(index) index -----------")
             }
         })
     }
