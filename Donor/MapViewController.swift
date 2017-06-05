@@ -25,13 +25,11 @@ final class MapViewController: BasicViewController, CLLocationManagerDelegate, G
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        DataLoader.shared.getEvents()
         Profile.shared.groupOfBlood = UserDefaults.standard.value(forKey: UserDefaultsKey.groupOfBlood) as? String
         locationManager.delegate = self
         CLLocationManager.authorizationStatus() != .authorizedWhenInUse ? locationManager.requestWhenInUseAuthorization() : locationManager.startUpdatingLocation()
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
-//        setupMarkers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +49,7 @@ final class MapViewController: BasicViewController, CLLocationManagerDelegate, G
             print("setupMarkers-------------")
         } else {
             print("Profile.shared.events.isEmpty-------------")
+            DataLoader.shared.getEvents()
         }
     }
 }
@@ -111,8 +110,9 @@ extension MapViewController {
     }
     
     func showAlertForChooseGroupOfBlood() {
-        let alertController = UIAlertController(title: "Please Check You Group of Blood", message: "", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in
+        let alertController = UIAlertController(title: LocalizedStrings.checkYourGroupAlert.localized, message: "", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: LocalizedStrings.ok
+        .localized, style: .default) { (UIAlertAction) in
             self.performSegue(withIdentifier: Segue.toPickerVC, sender: self)
         }
         alertController.addAction(okAction)

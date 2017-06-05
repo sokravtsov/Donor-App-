@@ -36,16 +36,16 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
         
         // Set up permissions
         pscope.addPermission(NotificationsPermission(notificationCategories: nil),
-                             message: "We use this to send you\r\nnotification about blood donating")
+                             message: LocalizedStrings.notificationAccess.localized)
         pscope.addPermission(LocationWhileInUsePermission(),
-                             message: "We use this to track\r\nyour location")
+                             message: LocalizedStrings.locationAccess.localized)
         
         // Show dialog with callbacks
-        pscope.show({ finished, results in
-            print("got results \(results)")
-        }, cancelled: { (results) -> Void in
-            print("thing was cancelled")
-        })
+//        pscope.show({ finished, results in
+//            print("got results \(results)")
+//        }, cancelled: { (results) -> Void in
+//            print("thing was cancelled")
+//        })
         
         loginButton.layer.cornerRadius = CGFloat(Radius.corner)
         facebookLoginButton.delegate = self

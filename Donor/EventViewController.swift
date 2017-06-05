@@ -46,6 +46,7 @@ final class EventViewController: BasicViewController, UIPickerViewDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDatePicker()
+        setupUI()
     }
     
     // MARK: - Actions
@@ -56,7 +57,7 @@ final class EventViewController: BasicViewController, UIPickerViewDelegate, UIPi
     
     @IBAction func doneButtonDidTouch(_ sender: UIButton) {
         guard let unwrapLat = latitude, let unwrapLon = longitude, let unwrapDate = expiredDate, let unwrapGroup =  bloodGroup else {
-            showAlert(title: "Error 😓", message: "You should choose blood group and expired date")
+            showAlert(title: LocalizedStrings.error.localized, message: LocalizedStrings.creationAlertMessage.localized)
             return
         }
         Profile.shared.events.removeAll()
@@ -66,7 +67,7 @@ final class EventViewController: BasicViewController, UIPickerViewDelegate, UIPi
                                               date: unwrapDate,
                                               description: textView.text)
         print("Event sended to Firebase")
-        showAlertAndDismiss(title: "Event created 🙏🏽", message: "Every donor with \(unwrapGroup) blood will see this event")
+        showAlertAndDismiss(title: LocalizedStrings.eventCreatedTitle.localized, message: "\(LocalizedStrings.eventCreatedMessage1.localized) \(unwrapGroup) \(LocalizedStrings.eventCreatedMessage2.localized)")
     }
 }
 
@@ -103,5 +104,13 @@ extension EventViewController {
         dateFormatter.dateStyle = DateFormatter.Style.medium
         dateFormatter.timeStyle = DateFormatter.Style.none
         expiredDate = dateFormatter.string(from: sender.date)
+    }
+    
+    func setupUI() {
+        chooceBloodLabel.text = LocalizedStrings.chooseBloodLabel.localized
+        chooceDateLabel.text = LocalizedStrings.chooseDateLabel.localized
+        descriptionLabel.text = LocalizedStrings.descriptionLabel.localized
+        cancelButton.setTitle(LocalizedStrings.cancel.localized, for: .normal)
+        doneButton.setTitle(LocalizedStrings.done.localized, for: .normal)
     }
 }

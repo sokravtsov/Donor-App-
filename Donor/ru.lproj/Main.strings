@@ -1,0 +1,57 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "528-dI-Gfg"; */
+"528-dI-Gfg.text" = "Label";
+
+/* Class = "UILabel"; text = "Specify The Required Blood Group"; ObjectID = "5se-Ht-XM7"; */
+"5se-Ht-XM7.text" = "Specify The Required Blood Group";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "78L-SJ-YyF"; */
+"78L-SJ-YyF.normalTitle" = "Done";
+
+/* Class = "UINavigationItem"; title = "My Blood Group"; ObjectID = "7Rl-Uv-A2f"; */
+"7Rl-Uv-A2f.title" = "My Blood Group";
+
+/* Class = "UILabel"; text = "Expiry date of blood donation"; ObjectID = "AFh-ax-vEQ"; */
+"AFh-ax-vEQ.text" = "Expiry date of blood donation";
+
+/* Class = "UILabel"; text = "blood group"; ObjectID = "JJa-au-Nwl"; */
+"JJa-au-Nwl.text" = "blood group";
+
+/* Class = "UINavigationItem"; title = "Blood Donation Event"; ObjectID = "Jvm-ti-h8j"; */
+"Jvm-ti-h8j.title" = "Blood Donation Event";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "K6a-yq-rQu"; */
+"K6a-yq-rQu.normalTitle" = "Login";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "K8m-dH-dn7"; */
+"K8m-dH-dn7.title" = "Back";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "R87-HM-bOu"; */
+"R87-HM-bOu.title" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "TCb-eM-OXF"; */
+"TCb-eM-OXF.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Description (Optional)"; ObjectID = "UQe-Di-6bP"; */
+"UQe-Di-6bP.text" = "Description (Optional)";
+
+/* Class = "UIButton"; normalTitle = "Don't have an account? Sing Up"; ObjectID = "UgW-5L-Pqp"; */
+"UgW-5L-Pqp.normalTitle" = "Don't have an account? Sing Up";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hnl-Qe-9Qz"; */
+"hnl-Qe-9Qz.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "ir6-TT-8Nz"; */
+"ir6-TT-8Nz.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "k4B-Je-Vqn"; */
+"k4B-Je-Vqn.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "v0p-mT-iBW"; */
+"v0p-mT-iBW.placeholder" = "Password";
+
+/* Class = "UINavigationItem"; title = "Blood Donation Events"; ObjectID = "yfP-3Q-tDL"; */
+"yfP-3Q-tDL.title" = "Blood Donation Events";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "zNY-9C-k7W"; */
+"zNY-9C-k7W.normalTitle" = "Cancel";

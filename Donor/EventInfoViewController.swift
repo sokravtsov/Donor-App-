@@ -20,12 +20,12 @@ final class EventInfoViewController: BasicViewController {
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var descriptionTextView: UITextView!
-    
-    @IBOutlet weak var navBar: UINavigationBar!
-    
+        
     @IBOutlet weak var mapView: GMSMapView!
     
     @IBOutlet weak var deleteButton: UIBarButtonItem!
+    
+    @IBOutlet weak var backButton: UIBarButtonItem!
     
     // MARK: - Variables
         
@@ -34,6 +34,12 @@ final class EventInfoViewController: BasicViewController {
     var index: Int?
     
     // MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        backButton.title = LocalizedStrings.back.localized
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -44,12 +50,13 @@ final class EventInfoViewController: BasicViewController {
         
         guard let uid = FIRAuth.auth()?.currentUser?.uid else {return}
         
-        bloodGroup.text = "Required blood group \(bloodGroupString)"
-        dateLabel.text = "Expiry date \(date)"
+        bloodGroup.text = "\(LocalizedStrings.requiredBloodGroup.localized) \(bloodGroupString)"
+        dateLabel.text = "\(LocalizedStrings.expiryDate.localized) \(date)"
         descriptionTextView.text = descript
         if ownerID == uid {
-            navBar.topItem?.title = "My Donation Event 🚑"
+            self.navigationItem.title = LocalizedStrings.eventInfoVCTitle2.localized
         } else {
+            self.navigationItem.title = LocalizedStrings.eventInfoVCTitle.localized
             deleteButton.isEnabled = false
             deleteButton.tintColor = .clear
         }
@@ -76,14 +83,14 @@ final class EventInfoViewController: BasicViewController {
 
 extension EventInfoViewController {
     func showAlertForDelete() {
-        let alertController = UIAlertController(title: "Are you want to delete event?", message: "", preferredStyle: .alert)
-        let delete = UIAlertAction(title: "Delete", style: .default) { (UIAlertAction) in
+        let alertController = UIAlertController(title: LocalizedStrings.deleteEventTitle.localized, message: "", preferredStyle: .alert)
+        let delete = UIAlertAction(title: LocalizedStrings.delete.localized, style: .default) { (UIAlertAction) in
             guard let key = self.event?.eventID, let index = self.index else { return }
             DataLoader.shared.deleteEventFromFirebase(key)
             Profile.shared.events.remove(at: index)
             self.dismiss(animated: true, completion: nil)
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancel = UIAlertAction(title: LocalizedStrings.cancel.localized, style: .cancel)
         alertController.addAction(delete)
         alertController.addAction(cancel)
         self.present(alertController, animated: true, completion: nil)

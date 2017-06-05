@@ -209,14 +209,14 @@
                                     <action selector="cancelButtonDidTouch:" destination="9iB-Tw-Xbe" eventType="touchUpInside" id="zff-yJ-boC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specify The Required Blood Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5se-Ht-XM7">
-                                <rect key="frame" x="16" y="66" width="343" height="23"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5se-Ht-XM7">
+                                <rect key="frame" x="16" y="66" width="343" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQ8-bq-EGa">
-                                <rect key="frame" x="0.0" y="97" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="1Df-9g-UxZ"/>
                                 </constraints>
@@ -225,20 +225,20 @@
                                     <outlet property="delegate" destination="9iB-Tw-Xbe" id="5i8-Ma-Z95"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description (Optional)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQe-Di-6bP">
-                                <rect key="frame" x="16" y="384" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQe-Di-6bP">
+                                <rect key="frame" x="16" y="338" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry date of blood donation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-ax-vEQ">
-                                <rect key="frame" x="16" y="225" width="343" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-ax-vEQ">
+                                <rect key="frame" x="16" y="202" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                 <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DuZ-l2-agw">
-                                <rect key="frame" x="0.0" y="256" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="210" width="375" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="0B6-g4-jF1"/>
                                 </constraints>
@@ -247,7 +247,7 @@
                                 </date>
                             </datePicker>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="psI-Q5-rXN">
-                                <rect key="frame" x="16" y="413" width="343" height="234"/>
+                                <rect key="frame" x="16" y="346" width="343" height="301"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -281,12 +281,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="zNY-9C-k7W" id="oAi-GI-kja"/>
+                        <outlet property="cancelButton" destination="zNY-9C-k7W" id="gOI-br-gqo"/>
                         <outlet property="chooceBloodLabel" destination="5se-Ht-XM7" id="vOk-yt-XZc"/>
                         <outlet property="chooceDateLabel" destination="AFh-ax-vEQ" id="ndx-dR-AyA"/>
                         <outlet property="datePickerView" destination="DuZ-l2-agw" id="rvG-Rv-XYX"/>
                         <outlet property="descriptionLabel" destination="UQe-Di-6bP" id="pmw-Jg-jjh"/>
-                        <outlet property="doneButton" destination="TCb-eM-OXF" id="ziR-QV-uev"/>
+                        <outlet property="doneButton" destination="TCb-eM-OXF" id="dkf-1c-SPH"/>
                         <outlet property="pickerView" destination="gQ8-bq-EGa" id="hZI-6D-tds"/>
                         <outlet property="textView" destination="psI-Q5-rXN" id="J42-Ra-pXC"/>
                     </connections>
@@ -307,25 +307,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5T0-Th-07z">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Blood Donation Event" id="Jvm-ti-h8j">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="K8m-dH-dn7">
-                                            <connections>
-                                                <action selector="backButtonDidTouch:" destination="Qll-IL-tGy" id="aZN-rj-ThW"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="CLg-aJ-gyj">
-                                            <connections>
-                                                <action selector="deleteButtonDidTouch:" destination="Qll-IL-tGy" id="omG-AS-0wR"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="528-dI-Gfg">
+                                <rect key="frame" x="16" y="321.5" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnl-Qe-9Qz">
+                                <rect key="frame" x="16" y="292" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihb-Yw-Lzg">
+                                <rect key="frame" x="16" y="351" width="343" height="296"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lD-8j-8Fo" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="212"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="212"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="212" id="N3E-Wc-cxa"/>
@@ -334,29 +336,9 @@
                                     <outlet property="delegate" destination="Qll-IL-tGy" id="dF2-lt-qrn"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="528-dI-Gfg">
-                                <rect key="frame" x="16" y="316" width="343" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnl-Qe-9Qz">
-                                <rect key="frame" x="16" y="284" width="343" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihb-Yw-Lzg">
-                                <rect key="frame" x="16" y="348" width="343" height="299"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5T0-Th-07z" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leading" id="8dA-r3-VpY"/>
                             <constraint firstItem="528-dI-Gfg" firstAttribute="top" secondItem="hnl-Qe-9Qz" secondAttribute="bottom" constant="8" id="ErC-If-WAs"/>
                             <constraint firstItem="hnl-Qe-9Qz" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leadingMargin" id="FSJ-CN-iGQ"/>
                             <constraint firstAttribute="trailing" secondItem="9lD-8j-8Fo" secondAttribute="trailing" id="IRm-E7-67k"/>
@@ -367,26 +349,36 @@
                             <constraint firstItem="ihb-Yw-Lzg" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leadingMargin" id="b1b-xX-aPX"/>
                             <constraint firstItem="ihb-Yw-Lzg" firstAttribute="trailing" secondItem="Fmz-0W-NvZ" secondAttribute="trailingMargin" id="bIf-7K-ofP"/>
                             <constraint firstItem="hnl-Qe-9Qz" firstAttribute="trailing" secondItem="Fmz-0W-NvZ" secondAttribute="trailingMargin" id="eb4-iz-3EP"/>
-                            <constraint firstItem="5T0-Th-07z" firstAttribute="top" secondItem="xrJ-FM-pwE" secondAttribute="bottom" id="nhj-6l-6X3"/>
-                            <constraint firstItem="9lD-8j-8Fo" firstAttribute="top" secondItem="5T0-Th-07z" secondAttribute="bottom" id="qxd-rS-2mC"/>
+                            <constraint firstItem="9lD-8j-8Fo" firstAttribute="top" secondItem="xrJ-FM-pwE" secondAttribute="bottom" constant="8" id="qdx-gU-aYX"/>
                             <constraint firstItem="528-dI-Gfg" firstAttribute="trailing" secondItem="Fmz-0W-NvZ" secondAttribute="trailingMargin" id="r27-kM-kjG"/>
                             <constraint firstItem="g6y-N4-HR5" firstAttribute="top" secondItem="ihb-Yw-Lzg" secondAttribute="bottom" constant="20" id="uBY-I8-R47"/>
-                            <constraint firstAttribute="trailing" secondItem="5T0-Th-07z" secondAttribute="trailing" id="x0g-Ee-Pxd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qKR-pc-HC2"/>
+                    <navigationItem key="navigationItem" title="Blood Donation Event" id="qKR-pc-HC2">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="TfA-QD-t33">
+                            <connections>
+                                <action selector="backButtonDidTouch:" destination="Qll-IL-tGy" id="FQV-2X-sTQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="KSu-VX-5Gw">
+                            <connections>
+                                <action selector="deleteButtonDidTouch:" destination="Qll-IL-tGy" id="873-fg-NBn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="backButton" destination="TfA-QD-t33" id="xA8-9U-BT5"/>
                         <outlet property="bloodGroup" destination="hnl-Qe-9Qz" id="JMd-2p-2dJ"/>
                         <outlet property="dateLabel" destination="528-dI-Gfg" id="L1L-j2-8Ui"/>
-                        <outlet property="deleteButton" destination="CLg-aJ-gyj" id="QmZ-2a-fGH"/>
+                        <outlet property="deleteButton" destination="KSu-VX-5Gw" id="UVM-iZ-AP5"/>
                         <outlet property="descriptionTextView" destination="ihb-Yw-Lzg" id="7a9-pX-ltM"/>
                         <outlet property="mapView" destination="9lD-8j-8Fo" id="dAR-I9-KD1"/>
-                        <outlet property="navBar" destination="5T0-Th-07z" id="FEA-fs-Gh4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8v-4O-bhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="824.79999999999995" y="1019.640179910045"/>
+            <point key="canvasLocation" x="1248.8" y="986.35682158920542"/>
         </scene>
         <!--My Blood Group-->
         <scene sceneID="gXf-vo-8nG">
@@ -409,8 +401,8 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4B-Je-Vqn">
-                                <rect key="frame" x="16" y="150.5" width="343" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <rect key="frame" x="16" y="154.5" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -439,16 +431,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="78L-SJ-YyF" id="W8Z-fj-bBT"/>
                         <outlet property="pickerView" destination="V0q-Mj-HxQ" id="4j6-Tg-BB0"/>
                         <outlet property="titleLabel" destination="k4B-Je-Vqn" id="iLu-VZ-hrD"/>
-                        <segue destination="upL-UO-vM5" kind="presentation" identifier="openMap" modalTransitionStyle="flipHorizontal" id="Oly-Bb-bQc"/>
+                        <segue destination="upL-UO-vM5" kind="presentation" identifier="openMap" id="Oly-Bb-bQc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DwR-2e-6Wt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="950" y="-546"/>
         </scene>
-        <!--Blood Donation Events-->
+        <!--Events Table View Controller-->
         <scene sceneID="J3i-VL-C2L">
             <objects>
                 <tableViewController id="pbu-OB-E4Q" customClass="EventsTableViewController" customModule="Donor" customModuleProvider="target" sceneMemberID="viewController">
@@ -497,7 +490,7 @@
                             <outlet property="delegate" destination="pbu-OB-E4Q" id="PXh-S1-0WZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Blood Donation Events" id="yfP-3Q-tDL">
+                    <navigationItem key="navigationItem" id="yfP-3Q-tDL">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="R87-HM-bOu">
                             <connections>
                                 <action selector="backDidTouch:" destination="pbu-OB-E4Q" id="KBb-b8-QsB"/>
@@ -505,8 +498,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="R87-HM-bOu" id="X6w-Lo-iLu"/>
                         <outlet property="tableView" destination="Cpv-pn-lah" id="5he-BR-0Bd"/>
-                        <segue destination="Qll-IL-tGy" kind="showDetail" identifier="toEventInfo" id="hV3-0k-9ZF"/>
+                        <segue destination="Qll-IL-tGy" kind="presentation" identifier="toEventInfo" id="z0O-Vc-CIb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ay7-je-5Td" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -557,7 +551,7 @@
         <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jGW-fg-2dZ"/>
+        <segue reference="Oly-Bb-bQc"/>
         <segue reference="CdV-4G-n82"/>
     </inferredMetricsTieBreakers>
 </document>

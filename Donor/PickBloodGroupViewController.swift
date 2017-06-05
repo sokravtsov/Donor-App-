@@ -15,6 +15,8 @@ final class PickBloodGroupViewController: BasicViewController, UIPickerViewDeleg
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var pickerView: UIPickerView!
+        
+    @IBOutlet weak var doneButton: UIButton!
     
     // MARK: - Variables
     
@@ -31,8 +33,7 @@ final class PickBloodGroupViewController: BasicViewController, UIPickerViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.titleLabel.text = Constants.groupOfBlood
+        setupUI()
         guard let groupOfBlood = UserDefaults.standard.value(forKey: UserDefaultsKey.groupOfBlood) else { return }
         // Download saved group of blood from UserDefaults and select at this row
         if let groupOfBlood = bloodGroups.index(of: groupOfBlood as! String) {
@@ -76,5 +77,13 @@ extension PickBloodGroupViewController {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerView.reloadAllComponents()
         UserDefaults.standard.set(bloodGroups[row], forKey: UserDefaultsKey.groupOfBlood)
+    }
+}
+
+extension PickBloodGroupViewController {
+    func setupUI() {
+        navigationItem.title = LocalizedStrings.myBloodGroup.localized
+        titleLabel.text = Constants.groupOfBlood
+        doneButton.setTitle(LocalizedStrings.ok.localized, for: .normal)
     }
 }

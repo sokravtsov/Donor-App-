@@ -16,6 +16,8 @@ final class EventsTableViewController: BasicViewController, UITableViewDelegate,
     
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    
     // MARK: - Variables
     
     var selectedEvent: Event?
@@ -25,6 +27,11 @@ final class EventsTableViewController: BasicViewController, UITableViewDelegate,
     var eventList = [Event]()
     
     weak var eventInfoViewController: EventInfoViewController!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -80,5 +87,12 @@ extension EventsTableViewController {
             vc.event = selectedEvent
             vc.index = selectedIndexPath
         }
+    }
+}
+
+extension EventsTableViewController {
+    func setupUI() {
+        self.navigationItem.title = LocalizedStrings.eventsTableVCTitle.localized
+        backButton.title = LocalizedStrings.back.localized
     }
 }
