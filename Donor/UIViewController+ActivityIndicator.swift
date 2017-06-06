@@ -26,11 +26,13 @@ extension UIViewController: activityIndicatorDelegate {
         activityIndicator?.activityIndicator.startAnimating()
         activityIndicator?.alpha = 1
         self.view.addSubview(activityIndicator!)
+        print("ShowIndicator-----------")
     }
     
     internal func hideActivityIndicator() {
         activityIndicator?.activityIndicator.stopAnimating()
         Animations.hide(view: activityIndicator!, alpha: 0)
+        print("HideIndicator-----------")
     }
 }
 

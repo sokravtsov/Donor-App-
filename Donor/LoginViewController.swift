@@ -49,10 +49,10 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
                 self.performSegue(withIdentifier: Segue.fromLoginToMap, sender: nil)
+            } else {
                 self.hideActivityIndicator()
             }
         }
-        hideActivityIndicator()
     }
     
     // MARK: - Actions
