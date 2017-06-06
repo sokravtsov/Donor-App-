@@ -17,13 +17,9 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
     // MARK: - Outlets
     
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var sigUpButton: UIButton!
-    
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     // MARK: - Variables
@@ -33,29 +29,22 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
         // Set up permissions
-        pscope.addPermission(NotificationsPermission(notificationCategories: nil),
-                             message: LocalizedStrings.notificationAccess.localized)
-        pscope.addPermission(LocationWhileInUsePermission(),
-                             message: LocalizedStrings.locationAccess.localized)
-        
+        pscope.addPermission(NotificationsPermission(notificationCategories: nil), message: LocalizedStrings.notificationAccess.localized)
+        pscope.addPermission(LocationWhileInUsePermission(), message: LocalizedStrings.locationAccess.localized)
         // Show dialog with callbacks
-//        pscope.show({ finished, results in
-//            print("got results \(results)")
-//        }, cancelled: { (results) -> Void in
-//            print("thing was cancelled")
-//        })
-        
-        loginButton.layer.cornerRadius = CGFloat(Radius.corner)
+        pscope.show({ finished, results in
+            print("got results \(results)")
+        }, cancelled: { (results) -> Void in
+            print("thing was cancelled")
+        })
         facebookLoginButton.delegate = self
-        
         DataLoader.shared.getEvents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         showActivityIndicator()
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
@@ -150,5 +139,18 @@ extension LoginViewController {
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         try! FIRAuth.auth()!.signOut()
         print ("User log out of facebook")
+    }
+}
+
+extension LoginViewController {
+    func setupUI() {
+        emailTextField.placeholder = LocalizedStrings.emailPlaceholder.localized
+        passwordTextField.placeholder = LocalizedStrings.passwordPlaceholder.localized
+        loginButton.setTitle(LocalizedStrings.loginButton.localized, for: .normal)
+        sigUpButton.setTitle(LocalizedStrings.signUpButton.localized, for: .normal)
+        loginButton.layer.cornerRadius = CGFloat(Radius.corner)
+        sigUpButton.layer.cornerRadius = CGFloat(Radius.corner)
+        sigUpButton.layer.borderWidth = CGFloat(Border.width)
+        sigUpButton.layer.borderColor = (UIColor(red: 153.0/255.0, green: 42.0/255.0, blue: 27.0/255.0, alpha: 1.0)).cgColor
     }
 }

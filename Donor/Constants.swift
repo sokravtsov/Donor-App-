@@ -56,6 +56,10 @@ enum Radius {
     static let corner = 5
 }
 
+enum Border {
+    static let width = 1
+}
+
 enum CellIdentifier {
     static let event = "cell"
 }

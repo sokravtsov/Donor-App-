@@ -37,6 +37,7 @@ final class EventsTableViewController: BasicViewController, UITableViewDelegate,
         super.viewWillAppear(animated)
         eventList.removeAll()
         eventList = Profile.shared.events
+        eventList.reverse()
         performUIUpdatesOnMain {
             self.showActivityIndicator()
             self.tableView.reloadData()

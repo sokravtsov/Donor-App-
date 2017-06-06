@@ -39,6 +39,8 @@ public struct LocalizedStrings {
     static let eventCreatedTitle = "eventCreatedTitle"
     static let eventCreatedMessage1 = "eventCreatedMessage1"
     static let eventCreatedMessage2 = "eventCreatedMessage2"
-
-    
+    static let emailPlaceholder = "emailPlaceholder"
+    static let passwordPlaceholder = "passwordPlaceholder"
+    static let loginButton = "loginButton"
+    static let signUpButton = "signUpButton"
 }

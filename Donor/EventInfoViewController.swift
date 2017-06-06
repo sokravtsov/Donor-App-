@@ -35,12 +35,6 @@ final class EventInfoViewController: BasicViewController {
     
     // MARK: - Life Cycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        backButton.title = LocalizedStrings.back.localized
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -70,11 +64,7 @@ final class EventInfoViewController: BasicViewController {
         }
     }
     
-    // MARK: - Actions
-    
-    @IBAction func backButtonDidTouch(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
-    }
+    // MARK: - Action
     
     @IBAction func deleteButtonDidTouch(_ sender: UIBarButtonItem) {
         showAlertForDelete()

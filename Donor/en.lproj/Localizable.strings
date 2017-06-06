@@ -36,3 +36,7 @@
 "eventCreatedTitle" = "Event created 🙏🏽";
 "eventCreatedMessage1" = "Every donor with";
 "eventCreatedMessage2" = "group of blood will see this event";
+"emailPlaceholder" = "Email";
+"passwordPlaceholder" = "Password";
+"loginButton" = "Login";
+"signUpButton" = "Don't have an account? Sing Up";
