@@ -16,20 +16,37 @@ final class EventsTableViewController: BasicViewController, UITableViewDelegate,
     
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    
     // MARK: - Variables
     
     var selectedEvent: Event?
     
-    var eventInfoViewController: EventInfoViewController!
+    var selectedIndexPath: Int?
     
-    // MARK: - Actions
+    var eventList = [Event]()
     
-    @IBAction func refreshDidTouch(_ sender: UIBarButtonItem) {
-        DataLoader.shared.getEvents()
+    weak var eventInfoViewController: EventInfoViewController!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        eventList.removeAll()
+        eventList = Profile.shared.events
+        eventList.reverse()
         performUIUpdatesOnMain {
+            self.showActivityIndicator()
             self.tableView.reloadData()
+            self.hideActivityIndicator()
         }
     }
+    
+    // MARK: - Actions
+
     
     @IBAction func backDidTouch(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
@@ -42,11 +59,11 @@ final class EventsTableViewController: BasicViewController, UITableViewDelegate,
 extension EventsTableViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Profile.shared.events.count
+        return eventList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let event = Profile.shared.events[indexPath.row]
+        let event = eventList[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.event, for: indexPath) as? EventViewCell {
             cell.configureCell(event: event)
             return cell
@@ -56,7 +73,8 @@ extension EventsTableViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedEvent = Profile.shared.events[(indexPath as NSIndexPath).row]
+        selectedEvent = eventList[(indexPath as NSIndexPath).row]
+        selectedIndexPath = indexPath.row
         performSegue(withIdentifier: Segue.toEventInfo, sender: self)
     }
 }
@@ -68,6 +86,14 @@ extension EventsTableViewController {
             let vc = segue.destination as! EventInfoViewController
             self.eventInfoViewController = vc
             vc.event = selectedEvent
+            vc.index = selectedIndexPath
         }
+    }
+}
+
+extension EventsTableViewController {
+    func setupUI() {
+        self.navigationItem.title = LocalizedStrings.eventsTableVCTitle.localized
+        backButton.title = LocalizedStrings.back.localized
     }
 }

@@ -17,13 +17,9 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
     // MARK: - Outlets
     
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var sigUpButton: UIButton!
-    
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     // MARK: - Variables
@@ -33,34 +29,30 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
         // Set up permissions
-        pscope.addPermission(NotificationsPermission(notificationCategories: nil),
-                             message: "We use this to send you\r\nnotification about blood donating")
-        pscope.addPermission(LocationWhileInUsePermission(),
-                             message: "We use this to track\r\nyour location")
-        
+        pscope.addPermission(NotificationsPermission(notificationCategories: nil), message: LocalizedStrings.notificationAccess.localized)
+        pscope.addPermission(LocationWhileInUsePermission(), message: LocalizedStrings.locationAccess.localized)
         // Show dialog with callbacks
         pscope.show({ finished, results in
             print("got results \(results)")
         }, cancelled: { (results) -> Void in
             print("thing was cancelled")
         })
+        facebookLoginButton.delegate = self
+        DataLoader.shared.getEvents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        facebookLoginButton.delegate = self
-        
+        showActivityIndicator()
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
-            
             if user != nil {
-                self.performSegue(withIdentifier: Segue.fromLoginToMap, sender: nil)
+                self.performSegue(withIdentifier: Segue.toPickerGroupOfBlood, sender: nil)
+                self.hideActivityIndicator()
             }
         }
-        
-        loginButton.layer.cornerRadius = CGFloat(Radius.corner)
+        hideActivityIndicator()
     }
     
     // MARK: - Actions
@@ -72,7 +64,6 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
     }
     
     @IBAction func singUpDidTouch(_ sender: UIButton) {
-        
         let alert = UIAlertController(title: Constants.registration, message: "", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: Constants.save, style: .default) { action in
             
@@ -86,8 +77,10 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
                 // Success - send email/pass to firebase & segue to picker VC
                 if error == nil {
                     FIRAuth.auth()!.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
-                    self.performSegue(withIdentifier: Segue.toPickerGroupOfBlood, sender: self)
-                    
+                    self.performUIUpdatesOnMain {
+                        self.hideActivityIndicator()
+                        self.performSegue(withIdentifier: Segue.toPickerGroupOfBlood, sender: self)
+                    }
                 // Alert if email not valid
                 } else {
                     self.hideActivityIndicator()
@@ -146,5 +139,18 @@ extension LoginViewController {
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         try! FIRAuth.auth()!.signOut()
         print ("User log out of facebook")
+    }
+}
+
+extension LoginViewController {
+    func setupUI() {
+        emailTextField.placeholder = LocalizedStrings.emailPlaceholder.localized
+        passwordTextField.placeholder = LocalizedStrings.passwordPlaceholder.localized
+        loginButton.setTitle(LocalizedStrings.loginButton.localized, for: .normal)
+        sigUpButton.setTitle(LocalizedStrings.signUpButton.localized, for: .normal)
+        loginButton.layer.cornerRadius = CGFloat(Radius.corner)
+        sigUpButton.layer.cornerRadius = CGFloat(Radius.corner)
+        sigUpButton.layer.borderWidth = CGFloat(Border.width)
+        sigUpButton.layer.borderColor = (UIColor(red: 153.0/255.0, green: 42.0/255.0, blue: 27.0/255.0, alpha: 1.0)).cgColor
     }
 }

@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  Donor
+
+  Created by Sergey Kravtsov on 05.06.17.
+  Copyright © 2017 Sergey Kravtsov. All rights reserved.
+*/
+
+"groupOfBlood" = "Check your group of blood";
+"save" = "Save";
+"registration" = "Registration";
+"cancel" = "Cancel";
+"enterEmailAgain" = "Try enter another email";
+"email" = "Enter your email";
+"password" = "Enter your password";
+"notValidEmail" = "Not valid email";
+"chooseBloodLabel" = "Specify the required blood group";
+"chooseDateLabel" = "Expiry date of blood donation";
+"descriptionLabel" = "Description";
+"done" = "Done";
+"eventInfoVCTitle" = "Blood donation event";
+"eventInfoVCTitle2" = "My donation event 🚑";
+"requiredBloodGroup" = "Required blood group";
+"expiryDate" = "Expiry date";
+"deleteEventTitle" = "Do you really want to delete the event?";
+"delete" = "Delete";
+"myBloodGroup" = "My blood group";
+"eventsTableVCTitle" = "Blood donation events";
+"back" = "Back";
+"ok" = "Ok";
+"checkYourGroupAlert" = "Check your group of blood";
+"notificationAccess" = "We use this to send you\r\nnotification about blood donating";
+"locationAccess" = "We use this to track\r\nyour location";
+"error" = "Error 😓";
+"creationAlertMessage" = "You should choose blood group and expired date";
+"eventCreatedTitle" = "Event created 🙏🏽";
+"eventCreatedMessage1" = "Every donor with";
+"eventCreatedMessage2" = "group of blood will see this event";
+"emailPlaceholder" = "Email";
+"passwordPlaceholder" = "Password";
+"loginButton" = "Login";
+"signUpButton" = "Don't have an account? Sing Up";

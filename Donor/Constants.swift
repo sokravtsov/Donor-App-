@@ -11,16 +11,16 @@ enum GoogleMaps {
 }
 
 enum Constants {
-    static let groupOfBlood = "Check your Group of Blood"
-    static let save = "Save"
-    static let registration = "Registration"
-    static let cancel = "Cancel"
-    static let enterEmailAgain = "Try enter another email"
+    static let groupOfBlood = LocalizedStrings.groupOfBlood.localized
+    static let save = LocalizedStrings.save.localized
+    static let registration = LocalizedStrings.registration.localized
+    static let cancel = LocalizedStrings.cancel.localized
+    static let enterEmailAgain = LocalizedStrings.enterEmailAgain.localized
 }
 
 enum Placeholder {
-    static let email = "Enter your email"
-    static let password = "Enter your password"
+    static let email = LocalizedStrings.email.localized
+    static let password = LocalizedStrings.password.localized
 }
 
 enum UserDefaultsKey {
@@ -29,7 +29,7 @@ enum UserDefaultsKey {
 
 enum ErrorIs {
     static let groupOfBloodNil = "Group of blood is nil"
-    static let notValidEmail = "Not valid email"
+    static let notValidEmail = LocalizedStrings.notValidEmail.localized
 }
 
 enum GroupOfBlood {
@@ -54,6 +54,10 @@ enum Segue {
 
 enum Radius {
     static let corner = 5
+}
+
+enum Border {
+    static let width = 1
 }
 
 enum CellIdentifier {

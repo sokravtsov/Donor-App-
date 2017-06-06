@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fyn-Qg-aws">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fyn-Qg-aws">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,7 +30,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6a-yq-rQu">
                                 <rect key="frame" x="16" y="394" width="343" height="30"/>
-                                <color key="backgroundColor" red="0.60087418556213379" green="0.16428259015083313" blue="0.10511938482522964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.16470588235294117" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -72,11 +72,10 @@
                             <constraint firstItem="UgW-5L-Pqp" firstAttribute="top" secondItem="K6a-yq-rQu" secondAttribute="bottom" constant="8" id="7gZ-Wg-1fO"/>
                             <constraint firstItem="SFn-fv-d8V" firstAttribute="trailing" secondItem="vXt-fM-0Ez" secondAttribute="trailingMargin" id="EpC-Rj-0pV"/>
                             <constraint firstItem="ir6-TT-8Nz" firstAttribute="leading" secondItem="vXt-fM-0Ez" secondAttribute="leadingMargin" id="Ez2-kr-SFz"/>
-                            <constraint firstItem="OEU-en-cMB" firstAttribute="leading" secondItem="vXt-fM-0Ez" secondAttribute="leadingMargin" constant="71" id="IZ7-Eh-cRU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="OEU-en-cMB" secondAttribute="trailing" constant="71" id="JPw-C1-pw4"/>
                             <constraint firstItem="v0p-mT-iBW" firstAttribute="top" secondItem="ir6-TT-8Nz" secondAttribute="bottom" constant="8" id="Jdi-zZ-ucC"/>
                             <constraint firstItem="SFn-fv-d8V" firstAttribute="leading" secondItem="vXt-fM-0Ez" secondAttribute="leadingMargin" id="LFJ-zp-nBb"/>
                             <constraint firstItem="ir6-TT-8Nz" firstAttribute="centerY" secondItem="vXt-fM-0Ez" secondAttribute="centerY" id="NNQ-V1-qLk"/>
+                            <constraint firstItem="OEU-en-cMB" firstAttribute="centerX" secondItem="ir6-TT-8Nz" secondAttribute="centerX" id="Nfr-5G-Esg"/>
                             <constraint firstItem="v0p-mT-iBW" firstAttribute="trailing" secondItem="vXt-fM-0Ez" secondAttribute="trailingMargin" id="btg-OE-nw3"/>
                             <constraint firstItem="K6a-yq-rQu" firstAttribute="trailing" secondItem="vXt-fM-0Ez" secondAttribute="trailingMargin" id="e76-Ym-M5D"/>
                             <constraint firstItem="UgW-5L-Pqp" firstAttribute="leading" secondItem="vXt-fM-0Ez" secondAttribute="leadingMargin" id="hIN-Z0-wg4"/>
@@ -208,14 +207,14 @@
                                     <action selector="cancelButtonDidTouch:" destination="9iB-Tw-Xbe" eventType="touchUpInside" id="zff-yJ-boC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specify The Required Blood Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5se-Ht-XM7">
-                                <rect key="frame" x="16" y="66" width="343" height="23"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5se-Ht-XM7">
+                                <rect key="frame" x="16" y="66" width="343" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQ8-bq-EGa">
-                                <rect key="frame" x="0.0" y="97" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="1Df-9g-UxZ"/>
                                 </constraints>
@@ -224,20 +223,20 @@
                                     <outlet property="delegate" destination="9iB-Tw-Xbe" id="5i8-Ma-Z95"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description (Optional)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQe-Di-6bP">
-                                <rect key="frame" x="16" y="384" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQe-Di-6bP">
+                                <rect key="frame" x="16" y="338" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry date of blood donation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-ax-vEQ">
-                                <rect key="frame" x="16" y="225" width="343" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-ax-vEQ">
+                                <rect key="frame" x="16" y="202" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                 <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DuZ-l2-agw">
-                                <rect key="frame" x="0.0" y="256" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="210" width="375" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="0B6-g4-jF1"/>
                                 </constraints>
@@ -246,7 +245,7 @@
                                 </date>
                             </datePicker>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="psI-Q5-rXN">
-                                <rect key="frame" x="16" y="413" width="343" height="234"/>
+                                <rect key="frame" x="16" y="346" width="343" height="301"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -280,12 +279,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="zNY-9C-k7W" id="oAi-GI-kja"/>
+                        <outlet property="cancelButton" destination="zNY-9C-k7W" id="gOI-br-gqo"/>
                         <outlet property="chooceBloodLabel" destination="5se-Ht-XM7" id="vOk-yt-XZc"/>
                         <outlet property="chooceDateLabel" destination="AFh-ax-vEQ" id="ndx-dR-AyA"/>
                         <outlet property="datePickerView" destination="DuZ-l2-agw" id="rvG-Rv-XYX"/>
                         <outlet property="descriptionLabel" destination="UQe-Di-6bP" id="pmw-Jg-jjh"/>
-                        <outlet property="doneButton" destination="TCb-eM-OXF" id="ziR-QV-uev"/>
+                        <outlet property="doneButton" destination="TCb-eM-OXF" id="dkf-1c-SPH"/>
                         <outlet property="pickerView" destination="gQ8-bq-EGa" id="hZI-6D-tds"/>
                         <outlet property="textView" destination="psI-Q5-rXN" id="J42-Ra-pXC"/>
                     </connections>
@@ -306,18 +305,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5T0-Th-07z">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Blood Donation Event" id="Jvm-ti-h8j">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="K8m-dH-dn7">
-                                            <connections>
-                                                <action selector="backButtonDidTouch:" destination="Qll-IL-tGy" id="aZN-rj-ThW"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="528-dI-Gfg">
+                                <rect key="frame" x="16" y="313.5" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnl-Qe-9Qz">
+                                <rect key="frame" x="16" y="284" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lD-8j-8Fo" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="212"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -328,20 +327,8 @@
                                     <outlet property="delegate" destination="Qll-IL-tGy" id="dF2-lt-qrn"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="528-dI-Gfg">
-                                <rect key="frame" x="16" y="316" width="343" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnl-Qe-9Qz">
-                                <rect key="frame" x="16" y="284" width="343" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihb-Yw-Lzg">
-                                <rect key="frame" x="16" y="348" width="343" height="299"/>
+                                <rect key="frame" x="16" y="343" width="343" height="304"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
@@ -350,36 +337,40 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5T0-Th-07z" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leading" id="8dA-r3-VpY"/>
                             <constraint firstItem="528-dI-Gfg" firstAttribute="top" secondItem="hnl-Qe-9Qz" secondAttribute="bottom" constant="8" id="ErC-If-WAs"/>
                             <constraint firstItem="hnl-Qe-9Qz" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leadingMargin" id="FSJ-CN-iGQ"/>
                             <constraint firstAttribute="trailing" secondItem="9lD-8j-8Fo" secondAttribute="trailing" id="IRm-E7-67k"/>
                             <constraint firstItem="9lD-8j-8Fo" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leading" id="M7G-mr-q7s"/>
+                            <constraint firstItem="9lD-8j-8Fo" firstAttribute="top" secondItem="xrJ-FM-pwE" secondAttribute="bottom" id="Xf6-Jz-znQ"/>
                             <constraint firstItem="hnl-Qe-9Qz" firstAttribute="top" secondItem="9lD-8j-8Fo" secondAttribute="bottom" constant="8" id="YGg-iS-u52"/>
                             <constraint firstItem="528-dI-Gfg" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leadingMargin" id="Z8h-1N-5hi"/>
                             <constraint firstItem="ihb-Yw-Lzg" firstAttribute="top" secondItem="528-dI-Gfg" secondAttribute="bottom" constant="8" id="Zcf-nz-lCm"/>
                             <constraint firstItem="ihb-Yw-Lzg" firstAttribute="leading" secondItem="Fmz-0W-NvZ" secondAttribute="leadingMargin" id="b1b-xX-aPX"/>
                             <constraint firstItem="ihb-Yw-Lzg" firstAttribute="trailing" secondItem="Fmz-0W-NvZ" secondAttribute="trailingMargin" id="bIf-7K-ofP"/>
                             <constraint firstItem="hnl-Qe-9Qz" firstAttribute="trailing" secondItem="Fmz-0W-NvZ" secondAttribute="trailingMargin" id="eb4-iz-3EP"/>
-                            <constraint firstItem="5T0-Th-07z" firstAttribute="top" secondItem="xrJ-FM-pwE" secondAttribute="bottom" id="nhj-6l-6X3"/>
-                            <constraint firstItem="9lD-8j-8Fo" firstAttribute="top" secondItem="5T0-Th-07z" secondAttribute="bottom" id="qxd-rS-2mC"/>
                             <constraint firstItem="528-dI-Gfg" firstAttribute="trailing" secondItem="Fmz-0W-NvZ" secondAttribute="trailingMargin" id="r27-kM-kjG"/>
                             <constraint firstItem="g6y-N4-HR5" firstAttribute="top" secondItem="ihb-Yw-Lzg" secondAttribute="bottom" constant="20" id="uBY-I8-R47"/>
-                            <constraint firstAttribute="trailing" secondItem="5T0-Th-07z" secondAttribute="trailing" id="x0g-Ee-Pxd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qKR-pc-HC2"/>
+                    <navigationItem key="navigationItem" title="Blood Donation Event" id="qKR-pc-HC2">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="iFe-g7-Mzw"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="KSu-VX-5Gw">
+                            <connections>
+                                <action selector="deleteButtonDidTouch:" destination="Qll-IL-tGy" id="rdX-af-O1g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bloodGroup" destination="hnl-Qe-9Qz" id="JMd-2p-2dJ"/>
                         <outlet property="dateLabel" destination="528-dI-Gfg" id="L1L-j2-8Ui"/>
+                        <outlet property="deleteButton" destination="KSu-VX-5Gw" id="8LM-kE-H06"/>
                         <outlet property="descriptionTextView" destination="ihb-Yw-Lzg" id="7a9-pX-ltM"/>
                         <outlet property="mapView" destination="9lD-8j-8Fo" id="dAR-I9-KD1"/>
-                        <outlet property="navBar" destination="5T0-Th-07z" id="FEA-fs-Gh4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8v-4O-bhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="824.79999999999995" y="1019.640179910045"/>
+            <point key="canvasLocation" x="1248.8" y="986.35682158920542"/>
         </scene>
         <!--My Blood Group-->
         <scene sceneID="gXf-vo-8nG">
@@ -402,8 +393,8 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4B-Je-Vqn">
-                                <rect key="frame" x="16" y="150.5" width="343" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <rect key="frame" x="16" y="154.5" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -432,16 +423,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="78L-SJ-YyF" id="W8Z-fj-bBT"/>
                         <outlet property="pickerView" destination="V0q-Mj-HxQ" id="4j6-Tg-BB0"/>
                         <outlet property="titleLabel" destination="k4B-Je-Vqn" id="iLu-VZ-hrD"/>
-                        <segue destination="upL-UO-vM5" kind="presentation" identifier="openMap" modalTransitionStyle="flipHorizontal" id="Oly-Bb-bQc"/>
+                        <segue destination="upL-UO-vM5" kind="presentation" identifier="openMap" id="Oly-Bb-bQc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DwR-2e-6Wt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="950" y="-546"/>
         </scene>
-        <!--Blood Donation Events-->
+        <!--Events Table View Controller-->
         <scene sceneID="J3i-VL-C2L">
             <objects>
                 <tableViewController id="pbu-OB-E4Q" customClass="EventsTableViewController" customModule="Donor" customModuleProvider="target" sceneMemberID="viewController">
@@ -490,21 +482,17 @@
                             <outlet property="delegate" destination="pbu-OB-E4Q" id="PXh-S1-0WZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Blood Donation Events" id="yfP-3Q-tDL">
+                    <navigationItem key="navigationItem" id="yfP-3Q-tDL">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="R87-HM-bOu">
                             <connections>
                                 <action selector="backDidTouch:" destination="pbu-OB-E4Q" id="KBb-b8-QsB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="5gf-oh-16M">
-                            <connections>
-                                <action selector="refreshDidTouch:" destination="pbu-OB-E4Q" id="nG0-3s-AQH"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="R87-HM-bOu" id="X6w-Lo-iLu"/>
                         <outlet property="tableView" destination="Cpv-pn-lah" id="5he-BR-0Bd"/>
-                        <segue destination="Qll-IL-tGy" kind="showDetail" identifier="toEventInfo" id="hV3-0k-9ZF"/>
+                        <segue destination="Qll-IL-tGy" kind="show" identifier="toEventInfo" id="z0O-Vc-CIb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ay7-je-5Td" userLabel="First Responder" sceneMemberID="firstResponder"/>
