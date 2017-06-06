@@ -40,3 +40,7 @@
 "passwordPlaceholder" = "Password";
 "loginButton" = "Login";
 "signUpButton" = "Don't have an account? Sing Up";
+"emailSubject" = "Donor App";
+"doNotDeleteInfo" = "\n\n\n\n------------------------------------------------\nPlease do not delete this information, it will help us to find an answer faster\n------------------------------------------------\nVersion number: ";
+"platform" = "\nPlatform: iOS ";
+"device" = "\nDevice: ";

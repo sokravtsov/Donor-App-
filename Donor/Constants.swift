@@ -16,6 +16,7 @@ enum Constants {
     static let registration = LocalizedStrings.registration.localized
     static let cancel = LocalizedStrings.cancel.localized
     static let enterEmailAgain = LocalizedStrings.enterEmailAgain.localized
+    static let email = "info@happimess.ru"
 }
 
 enum Placeholder {

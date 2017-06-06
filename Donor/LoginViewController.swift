@@ -48,7 +48,7 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
         showActivityIndicator()
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.performSegue(withIdentifier: Segue.toPickerGroupOfBlood, sender: nil)
+                self.performSegue(withIdentifier: Segue.fromLoginToMap, sender: nil)
                 self.hideActivityIndicator()
             }
         }

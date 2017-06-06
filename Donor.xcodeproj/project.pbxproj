@@ -34,6 +34,7 @@
 		82B6AADE1EA7D7FE00893174 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6AADD1EA7D7FE00893174 /* Animations.swift */; };
 		82B6AAE21EA7ED9300893174 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6AAE11EA7ED9300893174 /* BasicViewController.swift */; };
 		82B6AAE41EA80EB200893174 /* EventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6AAE31EA80EB200893174 /* EventInfoViewController.swift */; };
+		82BB7A131EE6DA6C0094BDCF /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB7A121EE6DA6C0094BDCF /* UIDevice.swift */; };
 		82D51E7C1EA50D740070B10A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D51E7B1EA50D740070B10A /* Event.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		82B6AADD1EA7D7FE00893174 /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		82B6AAE11EA7ED9300893174 /* BasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
 		82B6AAE31EA80EB200893174 /* EventInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoViewController.swift; sourceTree = "<group>"; };
+		82BB7A121EE6DA6C0094BDCF /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		82D51E7B1EA50D740070B10A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DC72BD702B33698BDC395806 /* Pods-Donor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Donor/Pods-Donor.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 				82B6AAD91EA7D77100893174 /* UIScreen+Size.swift */,
 				82B6AADB1EA7D79F00893174 /* UIViewController+ActivityIndicator.swift */,
 				827720551EE5A9DA00D1D292 /* Strings+Localized.swift */,
+				82BB7A121EE6DA6C0094BDCF /* UIDevice.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				82B6AAE21EA7ED9300893174 /* BasicViewController.swift in Sources */,
 				82A006BA1EA01B2800C35B1D /* Constants.swift in Sources */,
 				82B6AADE1EA7D7FE00893174 /* Animations.swift in Sources */,
+				82BB7A131EE6DA6C0094BDCF /* UIDevice.swift in Sources */,
 				82B6AAD31EA6539100893174 /* EventsTableViewController.swift in Sources */,
 				82B6AAD51EA69D3B00893174 /* EventViewCell.swift in Sources */,
 				82B6AAD71EA7D6EC00893174 /* ActivityIndicator.swift in Sources */,

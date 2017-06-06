@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 final class PickBloodGroupViewController: BasicViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -18,6 +19,7 @@ final class PickBloodGroupViewController: BasicViewController, UIPickerViewDeleg
         
     @IBOutlet weak var doneButton: UIButton!
     
+    @IBOutlet weak var contactUsButton: UIButton!
     // MARK: - Variables
     
     let bloodGroups = [GroupOfBlood.secondPlus,
@@ -45,6 +47,10 @@ final class PickBloodGroupViewController: BasicViewController, UIPickerViewDeleg
     
     @IBAction func doneButtonDidTouch(_ sender: UIButton) {
         self.performSegue(withIdentifier: Segue.openMap, sender: self)
+    }
+    
+    @IBAction func contactUsDidTouch(_ sender: Any) {
+        sendToMail()
     }
 }
 
@@ -85,5 +91,21 @@ extension PickBloodGroupViewController {
         navigationItem.title = LocalizedStrings.myBloodGroup.localized
         titleLabel.text = Constants.groupOfBlood
         doneButton.setTitle(LocalizedStrings.ok.localized, for: .normal)
+    }
+    
+    func sendToMail() {
+        let dictionary = Bundle.main.infoDictionary!
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        let systemVersion = UIDevice.current.systemVersion
+        let modelName = UIDevice.current.modelName
+        let subject = LocalizedStrings.emailSubject.localized
+        let body = "\(LocalizedStrings.doNotDeleteInfo.localized)\(version)\(LocalizedStrings.platform.localized)\(systemVersion)\(LocalizedStrings.device.localized)\(modelName)"
+        let email = Constants.email
+        let coded = "mailto:\(email)?subject=\(subject)&body=\(body)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        if let stringURL = coded, let emailURL: URL = URL(string: stringURL) {
+            if UIApplication.shared.canOpenURL(emailURL) {
+                UIApplication.shared.open(emailURL as URL, options: [:], completionHandler: nil)
+            }
+        }
     }
 }

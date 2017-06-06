@@ -398,12 +398,23 @@
                                 <color key="textColor" red="0.60091322660446167" green="0.16540840268135071" blue="0.10691966861486435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRM-S5-af8">
+                                <rect key="frame" x="258" y="617" width="101" height="30"/>
+                                <state key="normal" title="Написать нам">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="contactUsDidTouch:" destination="3Rf-1N-fGg" eventType="touchUpInside" id="qj2-ij-zpj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NRM-S5-af8" firstAttribute="trailing" secondItem="xyg-ux-kT3" secondAttribute="trailingMargin" id="6Y6-9n-oZs"/>
                             <constraint firstItem="k4B-Je-Vqn" firstAttribute="leading" secondItem="xyg-ux-kT3" secondAttribute="leadingMargin" id="VBn-Lv-Pzu"/>
                             <constraint firstItem="V0q-Mj-HxQ" firstAttribute="centerY" secondItem="xyg-ux-kT3" secondAttribute="centerY" id="Zy6-gS-utc"/>
                             <constraint firstItem="k4B-Je-Vqn" firstAttribute="trailing" secondItem="xyg-ux-kT3" secondAttribute="trailingMargin" id="anH-xk-KkA"/>
+                            <constraint firstItem="odo-0e-aJ6" firstAttribute="top" secondItem="NRM-S5-af8" secondAttribute="bottom" constant="20" id="j4q-3Q-r9p"/>
                             <constraint firstItem="V0q-Mj-HxQ" firstAttribute="top" secondItem="k4B-Je-Vqn" secondAttribute="bottom" constant="50" id="nP6-h2-c6e"/>
                             <constraint firstItem="V0q-Mj-HxQ" firstAttribute="centerX" secondItem="xyg-ux-kT3" secondAttribute="centerX" id="pUK-lx-nkZ"/>
                         </constraints>
@@ -423,6 +434,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="contactUsButton" destination="NRM-S5-af8" id="XB3-xg-opF"/>
                         <outlet property="doneButton" destination="78L-SJ-YyF" id="W8Z-fj-bBT"/>
                         <outlet property="pickerView" destination="V0q-Mj-HxQ" id="4j6-Tg-BB0"/>
                         <outlet property="titleLabel" destination="k4B-Je-Vqn" id="iLu-VZ-hrD"/>
@@ -431,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DwR-2e-6Wt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="950" y="-546"/>
+            <point key="canvasLocation" x="949.60000000000002" y="-546.47676161919048"/>
         </scene>
         <!--Events Table View Controller-->
         <scene sceneID="J3i-VL-C2L">
@@ -543,7 +555,7 @@
         <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jGW-fg-2dZ"/>
         <segue reference="CdV-4G-n82"/>
+        <segue reference="Oly-Bb-bQc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -43,4 +43,8 @@ public struct LocalizedStrings {
     static let passwordPlaceholder = "passwordPlaceholder"
     static let loginButton = "loginButton"
     static let signUpButton = "signUpButton"
+    static let emailSubject = "emailSubject"
+    static let doNotDeleteInfo = "doNotDeleteInfo"
+    static let platform = "platform"
+    static let device = "device"
 }
