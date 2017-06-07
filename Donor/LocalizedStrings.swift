@@ -32,8 +32,6 @@ public struct LocalizedStrings {
     static let back = "back"
     static let ok = "ok"
     static let checkYourGroupAlert = "checkYourGroupAlert"
-    static let notificationAccess = "notificationAccess"
-    static let locationAccess = "locationAccess"
     static let error = "error"
     static let creationAlertMessage = "creationAlertMessage"
     static let eventCreatedTitle = "eventCreatedTitle"

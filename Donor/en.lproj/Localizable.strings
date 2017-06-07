@@ -29,8 +29,6 @@
 "back" = "Back";
 "ok" = "Ok";
 "checkYourGroupAlert" = "Check your group of blood";
-"notificationAccess" = "We use this to send you\r\nnotification about blood donating";
-"locationAccess" = "We use this to track\r\nyour location";
 "error" = "Error 😓";
 "creationAlertMessage" = "You should choose blood group and expired date";
 "eventCreatedTitle" = "Event created 🙏🏽";

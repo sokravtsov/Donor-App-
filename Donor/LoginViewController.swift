@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FBSDKLoginKit
-import PermissionScope
 
 final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
     
@@ -22,24 +21,10 @@ final class LoginViewController: BasicViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var sigUpButton: UIButton!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
-    // MARK: - Variables
-    
-    let pscope = PermissionScope()
-    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        // Set up permissions
-        pscope.addPermission(NotificationsPermission(notificationCategories: nil), message: LocalizedStrings.notificationAccess.localized)
-        pscope.addPermission(LocationWhileInUsePermission(), message: LocalizedStrings.locationAccess.localized)
-        // Show dialog with callbacks
-        pscope.show({ finished, results in
-            print("got results \(results)")
-        }, cancelled: { (results) -> Void in
-            print("thing was cancelled")
-        })
-        facebookLoginButton.delegate = self
         DataLoader.shared.getEvents()
     }
     
@@ -144,6 +129,7 @@ extension LoginViewController {
 
 extension LoginViewController {
     func setupUI() {
+        facebookLoginButton.delegate = self
         emailTextField.placeholder = LocalizedStrings.emailPlaceholder.localized
         passwordTextField.placeholder = LocalizedStrings.passwordPlaceholder.localized
         loginButton.setTitle(LocalizedStrings.loginButton.localized, for: .normal)
